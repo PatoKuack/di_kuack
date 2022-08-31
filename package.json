@@ -1,0 +1,17 @@
+{
+  "name": "di_kuack",
+  "version": "1.0.0",
+  "description": "Un blog personal con tres secciones principales: textos personales, investigaciones y frases.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "Pato",
+    "Kuack",
+    "sección"
+  ],
+  "author": "Pato Kuack <nocturno_x_13514@hotmail.com>",
+  "license": "MIT"
+}
