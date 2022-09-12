@@ -1,6 +1,8 @@
 import React from 'react';
+import { BlogContext } from '../context/BlogContext';
 
-function BlogSearch({ searchValue, setSearchValue }) {
+function BlogSearch() {
+  const { searchValue, setSearchValue } = React.useContext(BlogContext);
 
   const onSearchChange = (change) => {
     setSearchValue(change.target.value);
@@ -10,11 +12,10 @@ function BlogSearch({ searchValue, setSearchValue }) {
     <React.Fragment>
       <label>Busca un tema:</label>
       <input 
-        placeholder="Cosmos" 
-        value = {searchValue} 
-        onChange = {onSearchChange}
+        placeholder="Busca un tema específico °u°" 
+        value = { searchValue } 
+        onChange = { onSearchChange }
       ></input>
-      <p>{searchValue}</p>
     </React.Fragment>
   );
 }

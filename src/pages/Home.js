@@ -1,34 +1,50 @@
 import React from 'react';
 import { BlogSearch } from "../components/BlogSearch";
-import { CreateButtom } from "../components/CreateButtom";
 import { BlogNavigator } from "../components/BlogNavigator";
+import { BlogSectionList } from '../components/BlogSectionList';
+import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/home.css';
 
 function Home() {
 
-  const [searchValue, setSearchValue] = React.useState('');
-  
-  // let searchTopics = [];
-  
-  // if(!(searchValue.length >= 1)) {
-  //   searchTopics = allTopics;
-  // } else {
-
-  // }
-
   return (
-    <React.Fragment>
-      <BlogSearch 
-        searchValue = { searchValue }
-        setSearchValue = { setSearchValue }
-      />
-      <CreateButtom />
-      <BlogNavigator 
-        searchValue = { searchValue }
-        setSearchValue = { setSearchValue }
-      />
-    </React.Fragment>
-  );
-}
+    <BlogProvider>
+      <BlogContext.Consumer>
+        {({searchValue, setSearchValue, sections, sectionSelect}) => {
+          return(
+
+            <React.Fragment>
+              <BlogSearch />
+              {sections.map( section => (
+                <BlogNavigator 
+                  key={section.idSection} 
+                  id={section.idelement} 
+                  select={section.selected}
+                  list={section.list}
+                  searchValue = { searchValue }
+                  setSearchValue = { setSearchValue }
+                />
+              ))}
+              <section>
+                <ul>
+                  {sections.map( section => (
+                    <BlogSectionList 
+                      key={section.idSection} 
+                      name={section.name} 
+                      id={section.idelement} 
+                      select={section.selected}
+                      onSelected={() => sectionSelect(section.idSection)}
+                    />
+                  ))}
+                </ul>
+              </section>
+            </React.Fragment>
+
+          );
+        }}
+      </BlogContext.Consumer>
+    </BlogProvider>
+    );
+  }
 
 export { Home }

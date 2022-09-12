@@ -1,10 +1,14 @@
 import React from 'react';
 
-function CreateButtom() {
+function CreateButtom(props) {
   return (
     <React.Fragment>
-      <button className='button' onClick={() => console.log('clic')}>
-        -&#62;
+      <button 
+        className='button' 
+        onClick={props.onAction}
+        type = {props.type}
+      >
+        {props.content}
       </button>
     </React.Fragment>
   );

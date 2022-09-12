@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const Bore = () => {
+export const Otros = () => {
   return (
     <React.Fragment>
-      <h1>Bore</h1>
-      <p>El Árbol Bore es...</p>
+      <h1>Otros</h1>
+      <p>...</p>
     </React.Fragment>
   );
 }

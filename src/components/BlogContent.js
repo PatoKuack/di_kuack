@@ -1,11 +1,21 @@
 import React from 'react';
+import { BlogProvider, BlogContext } from  "../context/BlogContext";
 
 function BlogContent() {
   return (
-    <React.Fragment>
-      <h1>Title</h1>
-      <p>Descripción...</p>
-    </React.Fragment>
+    <BlogProvider>
+      <BlogContext.Consumer>
+        {({topicSelect}) => {
+          return(
+            <React.Fragment>
+
+              {topicSelect().component}
+
+            </React.Fragment>
+          );
+        }}
+      </BlogContext.Consumer>
+    </BlogProvider>
   );
 }
 

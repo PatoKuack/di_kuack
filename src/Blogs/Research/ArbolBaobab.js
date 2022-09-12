@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Baobabs = () => {
+export const ArbolBaobab = () => {
   return (
     <React.Fragment>
       <h1>Baobabs</h1>

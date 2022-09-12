@@ -1,51 +1,34 @@
 import React from 'react';
-import { BlogSectionList } from './BlogSectionList';
-import { Research } from './Research';
-import { Adventures } from './Adventures';
-import { Phrases } from './Phrases';
+import { BlogTopicItem } from '../components/BlogTopicItem';
 
-const sectionsList = [
-  {idSection: 1, name: "Investigaciones", idelement: "research", selected: true},
-  {idSection: 2, name: "Pato-aventuras", idelement: "adventures", selected: false},
-  {idSection: 3, name: "Frases", idelement: "phrases", selected: false}
-];
+function BlogNavigator(props) {
 
-function BlogNavigator({ searchValue, setSearchValue }) {
-
+  let searchTopics = [];
+  
+  
+  if(!(props.searchValue.length >= 1)) {
+    searchTopics = props.list;
+  } else {
+    searchTopics = props.list.filter(topicList => {
+      const topicText = topicList.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n');
+      const searchText = props.searchValue.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n');
+      return topicText.includes(searchText);
+    });
+  }
+  
   return (
     <React.Fragment>
       <nav>
-        <ul className={`topic-list ${sectionsList[0].selected && 'topic-list__show'}`} id={`${sectionsList[0].inElement}List`}>
-          <Research 
-            searchValue = { searchValue }
-            setSearchValue = { setSearchValue }
-          />
-        </ul>
-        <ul className={`topic-list ${sectionsList[1].selected && 'topic-list__show'}`} id={`${sectionsList[1].inElement}List`}>
-          <Adventures 
-            searchValue = { searchValue }
-            setSearchValue = { setSearchValue }
-          />
-        </ul>
-        <ul className={`topic-list ${sectionsList[2].selected && 'topic-list__show'}`} id={`${sectionsList[2].inElement}List`}>
-          <Phrases 
-            searchValue = { searchValue }
-            setSearchValue = { setSearchValue }
-          />
-        </ul>
-      </nav>
-      <section>
-        <ul>
-          {sectionsList.map( section => (
-            <BlogSectionList 
-              key={section.idSection} 
-              section={section.name} 
-              id={section.idelement} 
-              select={section.selected}
+        <ul className={`topic-list ${props.select && 'topic-list__show'}`} id={`${props.id}List`}>
+          {searchTopics.map(topic => (
+            <BlogTopicItem 
+              key={topic.id}
+              topic={topic.topic}
+              component={topic.component}
             />
           ))}
         </ul>
-      </section>
+      </nav>
     </React.Fragment>
   );
 }
