@@ -6,12 +6,6 @@ import { ComentsList } from "../components/ComentsList"
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/coments.css';
 
-/* const coments = [
-  {id: 1, text: "Agrega esto: ...", loved: false, topic: noneTopic},
-  {id: 2, text: "También faltó esto: ...", loved: false, topic: noneTopic},
-  {id: 3, text: "Puedes aprender más de aquí: ...", loved: false, topic: noneTopic}
-]; */
-
 function Blog() {
   return (
     <BlogProvider>
@@ -20,8 +14,8 @@ function Blog() {
           totalComents, 
           comentValues, 
           comentLoved, 
-          error, 
-          loading,
+          errorComent, 
+          loadingComent,
           openModal,
           setOpenModal,
           deletComent,
@@ -30,18 +24,14 @@ function Blog() {
           return(
             <React.Fragment>
 
-              <BlogContent>
-                {error && <p>¡Por las plumas de mi abuelo, amigue! tuvimos un error =O</p>}
-                {loading && <p>Cargando el texto =)</p>}
-              </BlogContent>
-              
+              <BlogContent />
               <ComentsList>
                 <ComentsForm />
                 <p>Hay {totalComents} comentarios</p>
                 <ul>
-                  {error && <p>¡Santos pati-cuervos, amigue! tuvimos un error =O</p>}
-                  {loading && <p>Cargando los comentarios =)</p>}
-                  {(!loading && !totalComents ) && <p>Los mensajes no se pueden mostrar en línea todavia, XD pero puedes utilizarlos para crear notas personales =P</p>}
+                  {errorComent && <p>¡Santos pati-cuervos, amigue! tuvimos un error =O</p>}
+                  {loadingComent && <p>Cargando los comentarios =)</p>}
+                  {(!loadingComent && !totalComents ) && <p>Los mensajes no se pueden mostrar en línea todavia, XD pero puedes utilizarlos para crear notas personales =P</p>}
                   {comentValues.map( comented => (
                     <ComentsItem 
                       key={comented.id} 

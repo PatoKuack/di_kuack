@@ -38,11 +38,11 @@ const noneList = [
 ];
 
 const sectionsList = [
-  {idSection: 1, name: "Investigaciones", idelement: "research", selected: false, list: researchList},
-  {idSection: 2, name: "Pato-aventuras", idelement: "adventures", selected: false, list: adventuresList},
-  {idSection: 3, name: "Frases", idelement: "phrases", selected: true, list: phrasesList},
-  {idSection: 4, name: "Biografía", idelement: "fail", selected: false, component: <NotFound />, list: noneList},
-  {idSection: 5, name: "Otros", idelement: "fail", selected: false, component: <NotFound />, list: noneList}
+  {idSection: 1, name: "Investigaciones", selected: false, list: researchList},
+  {idSection: 2, name: "Pato-aventuras", selected: false, list: adventuresList},
+  {idSection: 3, name: "Frases", selected: true, list: phrasesList},
+  {idSection: 4, name: "favoritos", selected: false, list: noneList},
+  {idSection: 5, name: "otros", selected: false, list: noneList}
 ];
 
 export { researchList, adventuresList, phrasesList, noneList, sectionsList }

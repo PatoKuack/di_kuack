@@ -8,7 +8,6 @@ const BlogContext = React.createContext();
 function BlogProvider(props) {
 
   const [sections, setSections] = React.useState(sectionsList);
-
   const [searchValue, setSearchValue] = React.useState('');
 
   const sectionSelect = (idSelected) => {
@@ -44,14 +43,29 @@ function BlogProvider(props) {
     }
     return(topicElements);
   }
+  
+  const {
+    itemValues: favoriteList,
+    saveItem: saveFavoriteList,
+  } = useLocalStorage([], 'FAVORITES_V1');
+
+  const topicFavorite = (newTopic) => {
+    const topicIndex = favoriteList.findIndex(topic => topic.topic === newTopic);
+    const newTopicList = [...favoriteList];
+    if(favoriteList.includes(newTopic)) {
+      newTopicList.splice(topicIndex, 1);
+    } else {
+      newTopicList.push(newTopic);
+    }
+    saveFavoriteList(newTopicList);
+  }
 
   //----------------------------------------------------------
-
   const {
     itemValues: comentValues,
     saveItem: saveComents,
-    loading,
-    error,
+    loading: loadingComent,
+    error: errorComent,
   } = useLocalStorage([], 'COMENTS_V1');
   
   const [openModal, setOpenModal] = React.useState(false);
@@ -93,8 +107,10 @@ function BlogProvider(props) {
       sections,
       sectionSelect,
       topicSelect,
-      loading,
-      error,
+      loadingComent,
+      errorComent,
+      favoriteList,
+      topicFavorite,
       // ----------------------
       totalComents,
       comentValues,

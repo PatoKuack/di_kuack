@@ -14,8 +14,8 @@
 }
 
 .topic-list{
-  display: none;
+  
 }
-.topic-list__show{
-  display: inherit;
+.topic-favorite {
+  cursor: pointer;
 }

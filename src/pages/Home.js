@@ -10,7 +10,15 @@ function Home() {
   return (
     <BlogProvider>
       <BlogContext.Consumer>
-        {({searchValue, setSearchValue, sections, sectionSelect}) => {
+        {({
+          searchValue, 
+          setSearchValue, 
+          sections, 
+          setSections,
+          sectionSelect,
+          noneList,
+          favoriteList,
+        }) => {
           return(
 
             <React.Fragment>
@@ -18,11 +26,14 @@ function Home() {
               {sections.map( section => (
                 <BlogNavigator 
                   key={section.idSection} 
-                  id={section.idelement} 
                   select={section.selected}
                   list={section.list}
                   searchValue = { searchValue }
                   setSearchValue = { setSearchValue }
+                  sections = {sections}
+                  setSections = {setSections}
+                  noneList = {noneList}
+                  favoriteList = {favoriteList}
                 />
               ))}
               <section>
@@ -31,7 +42,6 @@ function Home() {
                     <BlogSectionList 
                       key={section.idSection} 
                       name={section.name} 
-                      id={section.idelement} 
                       select={section.selected}
                       onSelected={() => sectionSelect(section.idSection)}
                     />

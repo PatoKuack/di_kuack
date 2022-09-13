@@ -4,7 +4,7 @@ import { BlogTopicItem } from '../components/BlogTopicItem';
 function BlogNavigator(props) {
 
   let searchTopics = [];
-  
+  // console.log(props.list);
   
   if(!(props.searchValue.length >= 1)) {
     searchTopics = props.list;
@@ -19,7 +19,7 @@ function BlogNavigator(props) {
   return (
     <React.Fragment>
       <nav>
-        <ul className={`topic-list ${props.select && 'topic-list__show'}`} id={`${props.id}List`}>
+        <ul className={`topic-list ${!(props.select) && 'hide'}`}>
           {searchTopics.map(topic => (
             <BlogTopicItem 
               key={topic.id}
