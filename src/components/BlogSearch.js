@@ -9,14 +9,15 @@ function BlogSearch() {
   }
 
   return (
-    <React.Fragment>
-      <label>Busca un tema:</label>
+    <form className='search'>
+      <label className='search-label'>Busca un tema:</label>
       <input 
-        placeholder="Busca un tema específico °u°" 
+        className='search-input'
+        placeholder="Busca un tema °u°" 
         value = { searchValue } 
         onChange = { onSearchChange }
       ></input>
-    </React.Fragment>
+    </form>
   );
 }
 

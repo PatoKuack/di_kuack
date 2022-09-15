@@ -4,10 +4,10 @@ function BlogSectionList(props) {
 
   return (
     <li 
-    className={`section-item ${props.select && 'section-item__selected'}`} 
-    onClick={props.onSelected}
+      className={`section-item ${props.select && 'section-item__selected'}`} 
+      onClick={props.onSelected}
     >
-      {props.name}
+      <span>{props.name}</span>
     </li>
   );
 }

@@ -3,7 +3,7 @@ import { BlogSearch } from "../components/BlogSearch";
 import { BlogNavigator } from "../components/BlogNavigator";
 import { BlogSectionList } from '../components/BlogSectionList';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
-import '../styles/home.css';
+import '../styles/main.scss';
 
 function Home() {
 
@@ -36,7 +36,7 @@ function Home() {
                   favoriteList = {favoriteList}
                 />
               ))}
-              <section>
+              <section className='sections-navigator'>
                 <ul>
                   {sections.map( section => (
                     <BlogSectionList 

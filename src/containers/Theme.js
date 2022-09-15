@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/theme.css'
 
 function Theme() {
   return (

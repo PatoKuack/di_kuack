@@ -7,11 +7,11 @@ function BlogContent() {
       <BlogContext.Consumer>
         {({topicSelect}) => {
           return(
-            <React.Fragment>
+            <section className='topic-content'>
 
               {topicSelect().component}
 
-            </React.Fragment>
+            </section>
           );
         }}
       </BlogContext.Consumer>

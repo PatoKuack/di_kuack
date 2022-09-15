@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/layout.css'
+import '../styles/main.scss'
 import { Theme } from "./Theme";
 
 function Layout({children}) {

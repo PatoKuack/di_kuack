@@ -9,6 +9,7 @@ function ComentsForm() {
   const onSubmitComent = (event) => {
     event.preventDefault();
     addComent(newComentValue, topicSelect().topic);
+    setNewComentValue("");
   }
 
   const onChange = (event) => {

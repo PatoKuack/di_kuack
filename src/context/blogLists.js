@@ -32,6 +32,20 @@ const phrasesList = [
   {id: 3, topic: "Estoicismo", component: <Estoicismo />},
   {id: 4, topic: "Taoísmo", component: <Taoismo />},
 ];
+
+function compareLlist( a, b ) {
+  if ( a.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n') < b.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n')){
+    return -1;
+  }
+  if ( a.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n') > b.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n')){
+    return 1;
+  }
+  return 0;
+}
+researchList.sort(compareLlist);
+adventuresList.sort(compareLlist);
+phrasesList.sort(compareLlist);
+
 phrasesList.push({id: phrasesList.length + 1, topic: "Otros", components: <Otros />});
 const noneList = [
   {id: 1, topic: "Not Found", component: <NotFound />},

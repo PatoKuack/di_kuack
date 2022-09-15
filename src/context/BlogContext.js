@@ -70,7 +70,15 @@ function BlogProvider(props) {
   
   const [openModal, setOpenModal] = React.useState(false);
   // const comentsLoved = coment.filter(c => !!c.loved).length;
-  const totalComents = comentValues.length;
+  
+  function totalTopicComents() {
+    let totTopic = 0;
+    const totalTopic = comentValues.map(totTopic =>  totTopic.topic);
+    totalTopic.map(e => {
+      if(e == topicSelect().topic){totTopic++}
+    });
+    return(totTopic);
+  }
 
   const comentLoved = (idComented) => {
     const comentIndex = comentValues.findIndex(coment => coment.id === idComented);
@@ -88,7 +96,6 @@ function BlogProvider(props) {
     newComentList.splice(comentIndex, 1);
     saveComents(newComentList);
   }
-
   const addComent = (comentText, comentTopic) => {
     const newComentList = [...comentValues];
     newComentList.push({
@@ -112,7 +119,7 @@ function BlogProvider(props) {
       favoriteList,
       topicFavorite,
       // ----------------------
-      totalComents,
+      totalTopicComents,
       comentValues,
       comentLoved,
       deletComent,
