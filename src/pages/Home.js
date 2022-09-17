@@ -2,6 +2,9 @@ import React from 'react';
 import { BlogSearch } from "../components/BlogSearch";
 import { BlogNavigator } from "../components/BlogNavigator";
 import { BlogSectionList } from '../components/BlogSectionList';
+import { BlogError } from '../components/BlogError';
+import { BlogLoading } from '../components/BlogLoading';
+// import { BlogEmpty } from '../components/BlogEmpty';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/main.scss';
 
@@ -18,13 +21,16 @@ function Home() {
           sectionSelect,
           noneList,
           favoriteList,
+          sectionsLoading,
+          sectionsError,
         }) => {
           return(
 
             <React.Fragment>
               <BlogSearch />
+
               {sections.map( section => (
-                <BlogNavigator 
+                <BlogNavigator
                   key={section.idSection} 
                   select={section.selected}
                   list={section.list}
@@ -36,8 +42,12 @@ function Home() {
                   favoriteList = {favoriteList}
                 />
               ))}
+
               <section className='sections-navigator'>
                 <ul>
+                  {sectionsError && <BlogError error={sectionsError} />}
+                  {sectionsLoading && <BlogLoading />}
+                  {/* {(!sectionsLoading && !(sections.length) ) && <BlogEmpty />} */}
                   {sections.map( section => (
                     <BlogSectionList 
                       key={section.idSection} 

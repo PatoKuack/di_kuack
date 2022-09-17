@@ -7,8 +7,20 @@ const BlogContext = React.createContext();
 
 function BlogProvider(props) {
 
-  const [sections, setSections] = React.useState(sectionsList);
   const [searchValue, setSearchValue] = React.useState('');
+  const [sections, setSections] = React.useState([]);
+  const [sectionsLoading, setSectionsLoading] = React.useState(true);
+  const [sectionsError, setSectionsError] = React.useState(false);
+  React.useEffect(() => {
+    setTimeout(() => {
+      try{
+        setSections(sectionsList);
+        setSectionsLoading(false);
+      } catch(error) {
+        setSectionsError(error);
+      }
+    }, 1000);
+  });
 
   const sectionSelect = (idSelected) => {
     const sectionIndex = sections.findIndex(section => section.idSection === idSelected);
@@ -118,6 +130,8 @@ function BlogProvider(props) {
       errorComent,
       favoriteList,
       topicFavorite,
+      sectionsLoading,
+      sectionsError,
       // ----------------------
       totalTopicComents,
       comentValues,

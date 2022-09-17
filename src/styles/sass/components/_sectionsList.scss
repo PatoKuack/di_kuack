@@ -1,3 +1,20 @@
+.section-item {
+  background-color: rgb(230, 237, 238);
+}
+.section-item:hover {
+  background-color: rgb(198, 198, 198);
+}
 .section-item:nth-child(4) > span, .section-item:nth-child(5) > span {
   filter: blur(3px);
+}
+// .section-item:nth-child(4):hover, .section-item:nth-child(5):hover {
+//   background-color: rgb(230, 237, 238);
+// }
+.section-item:nth-child(4), .section-item:nth-child(5) {
+  background-color: rgb(198, 198, 198);
+  pointer-events: none;
+}
+
+.section-item__selected {
+  background-color: rgb(154, 255, 221);
 }
