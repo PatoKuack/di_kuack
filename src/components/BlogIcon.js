@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as FavoriteCheck } from '../assets/icons/favoriteCheck2.svg';
-import { ReactComponent as ComentDelete } from '../assets/icons/favoriteCheck.svg';
+import { ReactComponent as ComentDelete } from '../assets/icons/favoriteCheck1.svg';
 
 function BlogIcon({ type, colorA="transparent", selected, onClick }) {
 

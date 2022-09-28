@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Theme() {
+function Theme({children}) {
   return (
     <React.Fragment>
-      <div className='Theme'></div>
+      <div className='layout-theme'>
+        {children}
+      </div>
     </React.Fragment>
   );
 }

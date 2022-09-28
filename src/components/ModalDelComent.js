@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/main.scss';
 
-function ModalDelComent({ children }) {
+function ModalDelComent( {children} ) {
   return ReactDOM.createPortal(
-    <div className='modal'>
+    <React.Fragment>
       { children }
-    </div>,
+    </React.Fragment>,
     document.getElementById('modal')
   );
 }

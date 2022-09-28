@@ -1,11 +1,107 @@
-.coment-reaction {
-  display: inline;
+:root {
+  --border-coments: .5rem;
+  --botton-margin: .2rem;
+  --form-bottom-size: 2rem;
+  --close-bottom-size: 1.5rem;
+}
+
+.coments {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding: 1.5rem 10vw .5rem;
+  background-image: 
+      radial-gradient(var(--consol-color-A) 0%, var(--consol-color-A) 100%);
+  background-repeat: no-repeat;
+  border: var(--border-coments) solid var(--consol-color-B);
+  border-radius: 20% 20% 0 0;
+  @include from(l){
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  & > * {
+    width: 100%;
+    max-width: 850px;
+  }
+}
+.coments-form {
+  position: relative;
+}
+.coments-form__textarea {
+  width: 100%;
+  height: fit-content;
+  min-height: 3rem;
+  max-height: 7rem;
+  padding: .15rem .4rem;
+  padding-right: calc(var(--form-bottom-size) + 1rem);
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  font-size: var(--body-font-size);
+  @include from(m) {
+    padding-right: calc(var(--form-bottom-size) + 1.2rem);
+  }
+}
+.coments-form__button {
+  // min-width: var(--form-bottom-size);
+  min-height: var(--form-bottom-size);
+  position: absolute;
+  right: var(--botton-margin);
+  bottom: var(--botton-margin);
+  padding: 0 .3rem;
+  font-size: var(--small-font-size);
+  font-weight: bold;
+}
+
+.coments-counter {
+  font-style: italic;
+  margin-top: .15rem;
+}
+.coments-list {
+  // margin: 1rem 0;
+}
+.coments-warningtext {
+}
+
+
+.coments-item {
+  position: relative;
+  margin-top: 1rem;
+  border: 1px solid var(--text-color);
+}
+.coments-item:last-child {
+  margin-bottom: 1rem;
+}
+.coments-item__text {
+  padding: .5rem;
+  padding-bottom: .25rem;
+}
+.coments-item__close {
+  position: absolute;
+  top: calc((var(--close-bottom-size) / 2) * (-1));
+  right: calc((var(--close-bottom-size) / 2) * (-1));
+  width: var(--close-bottom-size);
+  height: var(--close-bottom-size);
+  margin: auto;
+  color: red;
+}
+.coments-item__reaction {
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  padding-top: .25rem;
+  text-align: start;
+  background-color: var(--consol-color-B);
+  color: var(--consol-color-B);
+  font-size: var(--small-font-size);
   filter: grayscale(100%);
-  color: rgb(155, 155, 155);
   cursor: pointer;
 }
-.coment-reaction__color {
+.coments-reaction__color {
   filter: grayscale(0%) hue-rotate(300deg);
   color: inherit;
 }
-

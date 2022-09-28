@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/main.scss'
-import { Theme } from "./Theme";
+import { Theme } from "../containers/Theme";
 
 function Layout({children}) {
   return (

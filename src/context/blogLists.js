@@ -52,8 +52,8 @@ const noneList = [
 ];
 
 const sectionsList = [
-  {idSection: 1, name: "Investigaciones", selected: false, list: researchList},
-  {idSection: 2, name: "Pato-aventuras", selected: false, list: adventuresList},
+  {idSection: 1, name: "Investigación", selected: false, list: researchList},
+  {idSection: 2, name: "Aventuras", selected: false, list: adventuresList},
   {idSection: 3, name: "Frases", selected: true, list: phrasesList},
   {idSection: 4, name: "favoritos", selected: false, list: noneList},
   {idSection: 5, name: "otros", selected: false, list: noneList}

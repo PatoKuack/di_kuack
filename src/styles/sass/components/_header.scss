@@ -1,0 +1,7 @@
+.header {
+  margin: 1rem 0;
+  color: var(--background-color);
+  text-align: center;
+  // text-shadow: 1px 1px 0px var(--text-color), -1px -1px 0px var(--text-color), 1px -1px 0px var(--text-color), -1px 1px 0px var(--text-color);
+  text-shadow: 1px 0px 0px var(--text-color), -1px 0px 0px var(--text-color), 0px -1px 0px var(--text-color), 0px 1px 0px var(--text-color);
+}

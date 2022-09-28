@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateButtom } from './CreateButtom';
+import { CreateButton } from './CreateButton';
 import { BlogContext } from '../context/BlogContext';
 
 function ComentsForm() {
@@ -17,16 +17,17 @@ function ComentsForm() {
   }
 
   return (
-    <form onSubmit={onSubmitComent}>
-      
+    <form onSubmit={onSubmitComent} className='coments-form'>
       <textarea 
         value = { newComentValue }
         onChange = { onChange }
-        placeholder = "Ingresa tu retroalimentación o aporte =D."
+        placeholder = "Ingresa tu retroalimentación o aporte del tema =D"
+        className='coments-form__textarea'
       ></textarea>
-      <CreateButtom 
-        content = "-&#62;" 
-        type = "submit"
+      <CreateButton 
+        content = "Send" 
+        type = "submit" 
+        class='coments-form__button'
       />
     </form>
   );

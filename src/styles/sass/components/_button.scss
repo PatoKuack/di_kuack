@@ -1,0 +1,29 @@
+.button {
+  background-color: var(--consol-color-A);
+  color: var(--text-color);
+  background-color: rgba(163, 61, 227, 0.5);
+  font-weight: 500;
+  border: .1rem solid var(--text-color);
+  border-radius: 5px;
+  box-shadow: 2px 0px 1px var(--consol-color-B);
+  cursor: pointer;
+}
+.button:hover {
+  filter: brightness(95%);
+}
+.button:active{
+  filter: brightness(85%);
+  box-shadow: 2px 0px 1px var(--consol-color-B) inset;
+  transform: scale(90%);
+}
+
+.no-styles-button {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.no-styles-button:active {
+  filter: none;
+  box-shadow: none;
+  transform: scale(105%);
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function CreateButtom(props) {
+function CreateButton(props) {
   return (
     <React.Fragment>
       <button 
-        className='button' 
+        className={`button ${props.class}`} 
         onClick={props.onAction}
         type = {props.type}
       >
@@ -14,4 +14,4 @@ function CreateButtom(props) {
   );
 }
 
-export { CreateButtom }
+export { CreateButton }

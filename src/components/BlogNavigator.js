@@ -16,16 +16,14 @@ function BlogNavigator(props) {
   }
   
   return (
-    <nav className='topic-navigator'>
-      <ul className={`topic-list ${!(props.select) && 'hide'}`}>
-        {searchTopics.map(topic => (
-          <BlogTopicItem 
-            key={topic.id}
-            topic={topic.topic}
-          />
-        ))}
-      </ul>
-    </nav>
+    <ul className={`topic-list ${!(props.select) && 'hide'}`}>
+      {searchTopics.map(topic => (
+        <BlogTopicItem 
+          key={topic.id}
+          topic={topic.topic}
+        />
+      ))}
+    </ul>
   );
 }
 

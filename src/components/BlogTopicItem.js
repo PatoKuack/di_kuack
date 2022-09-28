@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { BlogContext } from '../context/BlogContext';
-import { BlogIcon } from '../components/BlogIcon';
+// import { BlogIcon } from '../components/BlogIcon';
 
 function BlogTopicItem(props) {
   const { topicFavorite, favoriteList } = React.useContext(BlogContext);
@@ -9,33 +9,51 @@ function BlogTopicItem(props) {
   const onFavorite = () => {
     topicFavorite(props.topic);
   }
-  let color;
+  /* let color;
   let selected = "";
   if(!(favoriteList.includes(props.topic))) {
     color = "#32697f50";
   }else {
     color = "#b0def0";
     selected = "icon-container__selected";
-  }
+  } */
 
   let url = `${props.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n').replaceAll(' ', '_')}`;
   
   return (
     <React.Fragment>
       <li className='topic-item'>
+        <span className='topic-favorite'>
+          <input 
+            type={'checkbox'} 
+            className='topic-favorite__input'
+            onClick = { onFavorite }
+            checked={(favoriteList.includes(props.topic)) && "true"}
+          ></input>
+          <svg 
+            width="10px" 
+            height="10px" 
+            viewBox="0 0 10 10"
+            className={`topic-favorite__svg ${(favoriteList.includes(props.topic)) && 'topic-favorite__fill'}`}
+          >
+            <polygon points="4.55,0 5.95,2.85 9.1,3.3 6.82,5.52 7.36,8.65 4.55,7.17 1.74,8.65 2.27,5.52 0,3.3 3.14,2.85 " stroke='currenColor'/>
+          </svg>
+        </span>
         {/* <span 
           className={`topic-favorite ${!(favoriteList.includes(props.topic)) && 'transparent'}`}
           onClick = { onFavorite }
         >
           &#9889;
         </span>  */}
-        <BlogIcon 
+        {/* <BlogIcon 
           type={"check"}
           colorA={color}
           selected={selected}
           onClick={onFavorite}
-        />
-        <NavLink to={ `/blog/${url}` }>
+        /> */}
+        
+      
+        <NavLink to={ `/blog/${url}` } className="topic-item__a">
           { ` ${props.topic}` }
         </NavLink>
       </li>

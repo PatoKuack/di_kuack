@@ -62,12 +62,15 @@ function BlogProvider(props) {
   } = useLocalStorage([], 'FAVORITES_V1');
 
   const topicFavorite = (newTopic) => {
-    const topicIndex = favoriteList.findIndex(topic => topic.topic === newTopic);
     const newTopicList = [...favoriteList];
     if(favoriteList.includes(newTopic)) {
+      const topicIndex = favoriteList.findIndex(topic => topic === newTopic);
       newTopicList.splice(topicIndex, 1);
+      console.log(`El tema ${newTopic} en el index ${topicIndex}`);
     } else {
       newTopicList.push(newTopic);
+      console.log(favoriteList);
+      console.log(newTopic);
     }
     saveFavoriteList(newTopicList);
   }

@@ -5,11 +5,12 @@
 @import '../styles/sass/layout/layout.scss';
 @import '../styles/sass/themes/theme.scss';
 
+@import '../styles/sass/components/button.scss';
 @import '../styles/sass/components/icon.scss';
 @import '../styles/sass/components/loading.scss';
-@import '../styles/sass/components/home.scss';
-@import '../styles/sass/components/search.scss';
-@import '../styles/sass/components/topicList.scss';
+@import '../styles/sass/components/header.scss';
+@import '../styles/sass/components/topicNavigator.scss';
 @import '../styles/sass/components/sectionsList.scss';
+@import '../styles/sass/components/contentTopic.scss';
 @import '../styles/sass/components/coments.scss';
 @import '../styles/sass/components/modalConfirmation.scss';

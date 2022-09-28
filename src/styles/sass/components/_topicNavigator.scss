@@ -1,0 +1,80 @@
+:root {
+  // Esto mide el checkbox, no pude modificar sus estilos =C
+  --input-size: 13.2px;
+}
+
+.main-topic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // align-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90vw;
+  max-width: 500px;
+  min-height: 50vh;
+  max-height: 70vh;
+  margin-top: .5rem;
+  margin-bottom: auto;
+  padding: 3rem 2rem;
+  box-shadow: 0px 0px 25px 10px var(--text-color) inset;
+  border-radius: 5px;
+}
+.topic-navigator {
+  max-width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-y: scroll;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.search-label {
+  margin-bottom: .2rem;
+}
+.search-input {
+  max-width: 14rem;
+  padding: .15rem .4rem;
+  color: var(--text-color);
+  border-color: var(--text-color);
+  border-width: 1px;
+  border-style: solid;
+}
+.topic-list {
+}
+.topic-item {
+  position: relative;
+  margin: .5rem 0;
+  margin-left: 1rem;
+}
+.topic-item__a:hover {
+  text-decoration-style: dotted;
+  text-decoration-line: underline;
+  text-shadow: 0px 0px 5px var(--text-color);
+  -moz-text-shadow: 0px 0px 5px var(--text-color);
+  -webkit-text-shadow: 0px 0px 5px var(--text-color);
+  -ms-text-shadow: 0px 0px 5px var(--text-color);
+  -o-text-shadow: 0px 0px 5px var(--text-color);
+}
+.topic-favorite {
+  height: 100%;
+  margin-right: .1rem;
+}
+.topic-favorite__input {
+  position: absolute;
+  left: 0px;
+  top: calc(50% - (var(--input-size) / 2));
+  opacity: 0%;
+  cursor: pointer;
+}
+.topic-favorite__input:focus + .topic-favorite__svg{
+  // background-color: aquamarine;
+  outline: var(--outline-styles);
+}
+.topic-favorite__fill {
+  fill: var(--text-color);
+}

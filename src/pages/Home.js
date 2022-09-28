@@ -1,4 +1,5 @@
 import React from 'react';
+import { BlogHeader } from "../components/BlogHeader";
 import { BlogSearch } from "../components/BlogSearch";
 import { BlogNavigator } from "../components/BlogNavigator";
 import { BlogSectionList } from '../components/BlogSectionList';
@@ -27,36 +28,62 @@ function Home() {
           return(
 
             <React.Fragment>
-              <BlogSearch />
 
-              {sections.map( section => (
-                <BlogNavigator
-                  key={section.idSection} 
-                  select={section.selected}
-                  list={section.list}
-                  searchValue = { searchValue }
-                  setSearchValue = { setSearchValue }
-                  sections = {sections}
-                  setSections = {setSections}
-                  noneList = {noneList}
-                  favoriteList = {favoriteList}
-                />
-              ))}
+              <BlogHeader />
 
-              <section className='sections-navigator'>
-                <ul>
-                  {sectionsError && <BlogError error={sectionsError} />}
-                  {sectionsLoading && <BlogLoading />}
-                  {/* {(!sectionsLoading && !(sections.length) ) && <BlogEmpty />} */}
+              <div className='main-topic'>
+                <BlogSearch />
+                <nav className='topic-navigator'>
                   {sections.map( section => (
-                    <BlogSectionList 
+                    <BlogNavigator
                       key={section.idSection} 
-                      name={section.name} 
                       select={section.selected}
-                      onSelected={() => sectionSelect(section.idSection)}
+                      list={section.list}
+                      searchValue = { searchValue }
+                      setSearchValue = { setSearchValue }
+                      sections = {sections}
+                      setSections = {setSections}
+                      noneList = {noneList}
+                      favoriteList = {favoriteList}
                     />
                   ))}
-                </ul>
+                </nav>
+              </div>
+
+              <section className='sections'>
+                  <div className='sections-crystal'>
+                    <div className='sections-crystal__projector'>
+                      <svg width="100%" height="100%" viewBox="0 0 80 80">
+                        <polyline class="crystal-fill" points="3 52, 0 40, 3 28, 9 18, 18 9, 28 3, 40 0, 52 3, 62 9, 71 18, 77 28, 80 40, 77 52" stroke="currentColor" fill="currentColor" stroke-width="1px" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                    <div className='sections-crystal__projector'>
+                      <svg width="100%" height="100%" viewBox="0 0 80 80">
+                        {/* <polyline class="crystal-stroke" points="3 52, 40 40, 0 40, 40 40, 3 28, 40 40, 9 18, 40 40, 18 9, 40 40, 28 3, 40 40, 40 0, 40 40, 52 3, 40 40, 62 9, 40 40, 71 18, 40 40, 77 28, 40 40, 80 40, 40 40, 77 52, 40 40, " stroke="#00ffff32" fill="transparent" stroke-width=".5px" stroke-linejoin="round" /> */}
+                        <polyline class="crystal-stroke" points="3 52, 40 40, 0 40, 40 40, 3 28, 40 40, 18 9, 40 40, 40 0, 40 40, 62 9, 40 40, 77 28, 40 40, 80 40, 40 40, 77 52, 40 40, " stroke="#00ffffa2" fill="transparent" stroke-width=".5px" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                    <div className='sections-crystal__projector'>
+                      <svg width="100%" height="100%" viewBox="0 0 80 80">
+                        <polyline class="crystal-fill" points="25 55, 20 40, 25 25, 40 20, 55 25, 60 40, 55 55" stroke="#00ffffa2" fill="#00ffff22" stroke-width=".5px" stroke-linejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                <nav className='sections-navigator'>
+                  <ul className='sections-list layer-container'>
+                    {sectionsError && <BlogError error={sectionsError} />}
+                    {sectionsLoading && <BlogLoading />}
+                    {/* {(!sectionsLoading && !(sections.length) ) && <BlogEmpty />} */}
+                    {sections.map( section => (
+                      <BlogSectionList 
+                        key={section.idSection} 
+                        name={section.name} 
+                        select={section.selected}
+                        onSelected={() => sectionSelect(section.idSection)}
+                      />
+                    ))}
+                  </ul>
+                </nav>
               </section>
             </React.Fragment>
 
