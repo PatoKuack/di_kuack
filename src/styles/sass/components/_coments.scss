@@ -1,6 +1,6 @@
 :root {
   --border-coments: .25rem;
-  --botton-margin: .2rem;
+  --botton-margin: .25rem;
   --form-bottom-size: 2rem;
   --close-bottom-size: 1.5rem;
 }
@@ -38,8 +38,8 @@
 }
 .coments-form__textarea {
   width: 100%;
-  height: fit-content;
-  min-height: 3rem;
+  // height: fit-content;
+  // min-height: 3rem;
   max-height: 7rem;
   padding: .15rem .4rem;
   padding-right: calc(var(--form-bottom-size) + 1rem);
@@ -53,14 +53,15 @@
   }
 }
 .coments-form__button {
-  // min-width: var(--form-bottom-size);
-  min-height: var(--form-bottom-size);
   position: absolute;
   right: var(--botton-margin);
   bottom: var(--botton-margin);
+  // min-width: var(--form-bottom-size);
+  min-height: var(--form-bottom-size);
   padding: 0 .3rem;
   font-size: var(--small-font-size);
   font-weight: bold;
+  box-shadow: none;
 }
 
 .coments-counter {

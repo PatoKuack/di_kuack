@@ -25,6 +25,7 @@ function ComentsForm() {
         onChange = { onChange }
         placeholder = "Ingresa tu retroalimentación o aporte del tema =D"
         className='coments-form__textarea'
+        rows={3}
       ></textarea>
       <CreateButton 
         content = "Send"

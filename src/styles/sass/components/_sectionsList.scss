@@ -84,11 +84,10 @@
       linear-gradient(30deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
       linear-gradient(140deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
       linear-gradient(10deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
-      linear-gradient(140deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
-      linear-gradient(var(--text-color) 0%, var(--text-color) 100%);
-      background-position: 75% -2px, 75% -8px, 75% -14px, 75% -21px;
-      background-size: 10px;
-      background-repeat: repeat-y;
+      linear-gradient(146deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%);
+  background-position: 75% -2px, 75% -8.3px, 75% -13.7px, 75% -20.7px;
+  background-size: 10px;
+  background-repeat: repeat-y;
   opacity: 80%;
 }
 @include from(m) {
