@@ -16,9 +16,9 @@ function BlogSectionList(props) {
       onClick={props.onSelected}
     >
       <BlogIcon 
-        type={"check"}
+        type={"decoration-bulb"}
         colorA={color}
-        selected={"sections-item__spotlight"}
+        classN={"sections-item__spotlight"}
       />
       <CreateButton 
         content = {props.name}

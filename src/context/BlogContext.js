@@ -79,8 +79,8 @@ function BlogProvider(props) {
   const {
     itemValues: comentValues,
     saveItem: saveComents,
-    loading: loadingComent,
-    error: errorComent,
+    loading: comentsLoading,
+    error: comentsError,
   } = useLocalStorage([], 'COMENTS_V1');
   
   const [openModal, setOpenModal] = React.useState(false);
@@ -129,8 +129,6 @@ function BlogProvider(props) {
       sections,
       sectionSelect,
       topicSelect,
-      loadingComent,
-      errorComent,
       favoriteList,
       topicFavorite,
       sectionsLoading,
@@ -139,6 +137,8 @@ function BlogProvider(props) {
       totalTopicComents,
       comentValues,
       comentLoved,
+      comentsLoading,
+      comentsError,
       deletComent,
       addComent,
       openModal,

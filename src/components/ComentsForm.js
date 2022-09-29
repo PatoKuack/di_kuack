@@ -8,8 +8,10 @@ function ComentsForm() {
 
   const onSubmitComent = (event) => {
     event.preventDefault();
-    addComent(newComentValue, topicSelect().topic);
-    setNewComentValue("");
+    if(!!newComentValue){
+      addComent(newComentValue, topicSelect().topic);
+      setNewComentValue("");
+    }
   }
 
   const onChange = (event) => {
@@ -25,7 +27,7 @@ function ComentsForm() {
         className='coments-form__textarea'
       ></textarea>
       <CreateButton 
-        content = "Send" 
+        content = "Send"
         type = "submit" 
         class='coments-form__button'
       />

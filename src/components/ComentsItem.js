@@ -1,9 +1,16 @@
 import React from 'react';
 import { CreateButton } from '../components/CreateButton';
 import { ModalDelComent } from "./ModalDelComent";
+import { BlogIcon } from '../components/BlogIcon';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 
 function ComentsItem(props) {
+  /* let color;
+  if(props.select) {
+    color = "#b0def0";
+  }else {
+    color = "#32697f50";
+  } */
   return(
   <BlogProvider>
       <BlogContext.Consumer>
@@ -30,16 +37,24 @@ function ComentsItem(props) {
           return (
             <li className={`coments-item ${(props.topic !== topicSelect().topic) && 'hide'}`} >
               <p className='coments-item__text'>{props.text}</p>
+              <div className='coments-item__reaction'>
+                <CreateButton 
+                  content = "&#129311; Someone love it"
+                  onAction = { props.onLove }
+                  type = "button"
+                  class={`no-styles-button coments-reaction__loved ${props.loved && 'coments-reaction__color'}`}
+                />
+              </div>
+              
               <CreateButton 
-                content = "&#129311; Someone love it"
-                onAction = { props.onLove }
-                type = "button"
-                class={`no-styles-button coments-item__reaction ${props.loved && 'coments-reaction__color'}`}
-              />
-              <CreateButton 
-                content = "x"
+                content = {
+                  <BlogIcon 
+                    type={"delete-button"}
+                    colorA={"red"}
+                    classN={"coments-item__close__icon"}
+                  />
+                }
                 onAction = { showModal }
-                type = "button"
                 class = "no-styles-button coments-item__close"
               />
         

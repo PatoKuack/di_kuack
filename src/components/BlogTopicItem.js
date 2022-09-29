@@ -31,12 +31,12 @@ function BlogTopicItem(props) {
             checked={(favoriteList.includes(props.topic)) && "true"}
           ></input>
           <svg 
-            width="10px" 
-            height="10px" 
+            width="14px" 
+            height="14px" 
             viewBox="0 0 10 10"
             className={`topic-favorite__svg ${(favoriteList.includes(props.topic)) && 'topic-favorite__fill'}`}
           >
-            <polygon points="4.55,0 5.95,2.85 9.1,3.3 6.82,5.52 7.36,8.65 4.55,7.17 1.74,8.65 2.27,5.52 0,3.3 3.14,2.85 " stroke='currenColor'/>
+            <polygon points="4.55,0 5.95,2.85 9.1,3.3 6.82,5.52 7.36,8.65 4.55,7.17 1.74,8.65 2.27,5.52 0,3.3 3.14,2.85 " stroke='currentColor'/>
           </svg>
         </span>
         {/* <span 

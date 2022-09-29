@@ -32,6 +32,11 @@ function Home() {
               <BlogHeader />
 
               <div className='main-topic'>
+                <div className='light'>
+                  <div className='light-1'></div>
+                  <div className='light-2'></div>
+                  <div className='light-3'></div>
+                </div>
                 <BlogSearch />
                 <nav className='topic-navigator'>
                   {sections.map( section => (
@@ -59,7 +64,6 @@ function Home() {
                     </div>
                     <div className='sections-crystal__projector'>
                       <svg width="100%" height="100%" viewBox="0 0 80 80">
-                        {/* <polyline class="crystal-stroke" points="3 52, 40 40, 0 40, 40 40, 3 28, 40 40, 9 18, 40 40, 18 9, 40 40, 28 3, 40 40, 40 0, 40 40, 52 3, 40 40, 62 9, 40 40, 71 18, 40 40, 77 28, 40 40, 80 40, 40 40, 77 52, 40 40, " stroke="#00ffff32" fill="transparent" stroke-width=".5px" stroke-linejoin="round" /> */}
                         <polyline class="crystal-stroke" points="3 52, 40 40, 0 40, 40 40, 3 28, 40 40, 18 9, 40 40, 40 0, 40 40, 62 9, 40 40, 77 28, 40 40, 80 40, 40 40, 77 52, 40 40, " stroke="#00ffffa2" fill="transparent" stroke-width=".5px" stroke-linejoin="round" />
                       </svg>
                     </div>

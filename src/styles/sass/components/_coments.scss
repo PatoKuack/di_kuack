@@ -1,5 +1,5 @@
 :root {
-  --border-coments: .5rem;
+  --border-coments: .25rem;
   --botton-margin: .2rem;
   --form-bottom-size: 2rem;
   --close-bottom-size: 1.5rem;
@@ -15,8 +15,14 @@
   background-image: 
       radial-gradient(var(--consol-color-A) 0%, var(--consol-color-A) 100%);
   background-repeat: no-repeat;
-  border: var(--border-coments) solid var(--consol-color-B);
+  border-width: var(--border-coments);
+  border-top-width: calc(var(--border-coments) * 2);
+  border-style: solid;
+  border-color: var(--consol-color-B);
   border-radius: 20% 20% 0 0;
+  @include from(m){
+    border-top-width: calc(var(--border-coments) * 3);
+  }
   @include from(l){
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -62,9 +68,11 @@
   margin-top: .15rem;
 }
 .coments-list {
-  // margin: 1rem 0;
+  margin-top: 1rem;
 }
 .coments-warningtext {
+  opacity: 70%;
+  color: var(--alternative-color);
 }
 
 
@@ -87,21 +95,35 @@
   width: var(--close-bottom-size);
   height: var(--close-bottom-size);
   margin: auto;
-  color: red;
 }
+.coments-item__close__icon {
+  width: 1rem;
+  height: 1rem;
+  margin: auto;
+  @include from(m) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .coments-item__reaction {
   display: block;
   width: 100%;
-  padding: .5rem;
-  padding-top: .25rem;
-  text-align: start;
-  background-color: var(--consol-color-B);
-  color: var(--consol-color-B);
+  background-color: rgba(0, 0, 0, 0.155);
   font-size: var(--small-font-size);
-  filter: grayscale(100%);
-  cursor: pointer;
+}
+.coments-reaction__loved {
+  width: 100%;
+  height: 100%;
+  padding: .3rem .5rem;
+  text-align: start;
+  filter: grayscale(100%) opacity(80%);
 }
 .coments-reaction__color {
-  filter: grayscale(0%) hue-rotate(300deg);
+  filter: hue-rotate(300deg);
   color: inherit;
+}
+.coments-reaction__loved:hover {
+  filter: grayscale(70%) opacity(90%);
+  transform: scale(110%) translateX(1rem);
 }

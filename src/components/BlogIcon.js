@@ -1,21 +1,21 @@
 import React from 'react';
-import { ReactComponent as FavoriteCheck } from '../assets/icons/favoriteCheck2.svg';
-import { ReactComponent as ComentDelete } from '../assets/icons/favoriteCheck1.svg';
+import { ReactComponent as FavoriteCheck } from '../assets/icons/favoriteCheck.svg';
+import { ReactComponent as ComentDelete } from '../assets/icons/closeButton.svg';
 
-function BlogIcon({ type, colorA="transparent", selected, onClick }) {
+function BlogIcon({ type, colorA="transparent", classN, onClick }) {
 
   const iconTypes = {
-    "check": colorA => (
+    "decoration-bulb": colorA => (
       <FavoriteCheck className="icon icon__check" fill={colorA} />
     ),
-    "delete": colorA => (
-      <ComentDelete className="icon icon__delete" fill={colorA} />
+    "delete-button": colorB => (
+      <ComentDelete className="icon icon__delete" fill={colorB} />
     )
   }
 
   return (
     <span
-      className = {`icon-container icon-container__${type} ${selected}`}
+      className = {`icon-container icon-container__${type} ${classN}`}
       onClick = {onClick}
     >
       {iconTypes[type](colorA)}

@@ -55,6 +55,10 @@ img{
   /* Light */
   // filter: brightness(1) contrast(1);
 }
+input::placeholder, textarea::placeholder {
+  color: currentColor;
+}
+
 
 .margin-auto{
   margin-left: auto;

@@ -3,6 +3,9 @@ import { BlogContent } from "../components/BlogContent";
 import { ComentsForm } from "../components/ComentsForm";
 import { ComentsItem } from "../components/ComentsItem";
 import { ComentsList } from "../components/ComentsList";
+import { ComentError } from '../components/ComentError';
+import { ComentLoading } from '../components/ComentLoading';
+// import { ComentEmpty } from '../components/ComentEmpty';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/main.scss';
 
@@ -14,8 +17,8 @@ function Blog() {
           totalTopicComents, 
           comentValues, 
           comentLoved, 
-          errorComent, 
-          loadingComent,
+          comentsError, 
+          comentsLoading,
         }) => {
 
           function plural() {
@@ -37,16 +40,17 @@ function Blog() {
           return(
             <React.Fragment>
 
-              <div className='content-topic'>
+              {/* <div className='content-topic'>
+              </div> */}
               <BlogContent />
-              </div>
               <ComentsList>
                 <ComentsForm />
                 <p className='coments-counter'>{plural()}</p>
                 <ul className='coments-list'>
-                  {errorComent && <p className='coments-warningtext'>¡Santos pati-cuervos, amigue! tuvimos un error =O</p>}
-                  {loadingComent && <p className='coments-warningtext'>Cargando los comentarios ...</p>}
-                  {(!loadingComent && !(totalTopicComents()) ) && <p className='coments-warningtext'>Los mensajes se guardarán en tu navegador y sólo los podrás ver tú, así que <b><u>puedes utilizarlos</u></b> para crear <b><u>notas personales</u></b> hasta que yo sepa cómo conectarlos en línea =P</p>}
+                  
+                  {comentsError && <ComentError error={comentsError} />}
+                  {comentsLoading && <ComentLoading />}
+                  {(!comentsLoading && !(totalTopicComents()) ) && <p className='coments-warningtext'>Los mensajes se guardarán en tu navegador y sólo los podrás ver tú, así que <b><u>puedes utilizarlos</u></b> para crear <b><u>notas personales</u></b> hasta que yo sepa cómo conectarlos en línea =P</p>}
                   {comentValues.map( comented => (
                     <ComentsItem 
                       key={comented.id} 
