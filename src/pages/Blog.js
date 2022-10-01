@@ -5,6 +5,7 @@ import { ComentsItem } from "../components/ComentsItem";
 import { ComentsList } from "../components/ComentsList";
 import { ComentError } from '../components/ComentError';
 import { ComentLoading } from '../components/ComentLoading';
+import { Theme } from "../containers/Theme";
 // import { ComentEmpty } from '../components/ComentEmpty';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/main.scss';
@@ -39,9 +40,10 @@ function Blog() {
 
           return(
             <React.Fragment>
+              <Theme
+                theme = "planet"
+              />
 
-              {/* <div className='content-topic'>
-              </div> */}
               <BlogContent />
               <ComentsList>
                 <ComentsForm />

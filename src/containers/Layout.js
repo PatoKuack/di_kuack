@@ -1,12 +1,9 @@
 import React from 'react';
 import '../styles/main.scss'
-import { Theme } from "../containers/Theme";
 
 function Layout({children}) {
   return (
-    <div className='layout'>
-
-      <Theme />
+    <div className='layout' id='layout'>
 
       {children}
       

@@ -189,15 +189,14 @@
         linear-gradient(327deg, transparent 18%, var(--text-color) 20%, transparent 25%, transparent 100%);
   }
   &-2__content {
-    left: calc(50% - 10px);
-    width: 20px;
-    height: 100%;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 50%;
     background-image: 
-        linear-gradient(to top ,transparent 70%, var(--background-color) 100%),
+        linear-gradient(to top ,transparent 50%, var(--background-color) 100%),
         // linear-gradient(268deg, transparent 50%, var(--text-color) 80%, transparent 90%),
-        linear-gradient(92deg, transparent 50%, var(--text-color) 80%, transparent 90%)
-    ;
-    transform: rotateZ(30deg); 
+        linear-gradient(92deg, transparent 50%, var(--text-color) 80%, transparent 90%);
+    transform: rotateZ(10deg);
   }
   &-3__content {
     left: calc(50% - 12.5px);
@@ -211,31 +210,26 @@
     transform: rotateZ(-20deg); 
   }
   &-4__content {
-    left: calc(50% - 15px);
-    width: 30px;
-    height: 50%;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 100%;
     background-image: 
-        linear-gradient(to top ,transparent 50%, var(--background-color) 100%),
+        linear-gradient(to top ,transparent 70%, var(--background-color) 100%),
         // linear-gradient(268deg, transparent 50%, var(--text-color) 80%, transparent 90%),
-        linear-gradient(92deg, transparent 50%, var(--text-color) 80%, transparent 90%);
-    transform: rotateZ(10deg);
+        linear-gradient(92deg, transparent 50%, var(--text-color) 80%, transparent 90%)
+    ;
+    transform: rotateZ(30deg); 
   }
   
-  &-2 {
-    animation-timing-function: ease-in-out;
-  }
-  &-3 {
-    animation-timing-function: ease-in;
-  }
-  &-4 {
-    animation-timing-function: linear;
-  }
+  &-2 { animation-timing-function: linear; }
+  &-3 { animation-timing-function: ease-in; }
+  &-4 { animation-timing-function: ease-in-out; }
   &-2 , &-3, &-4 {
-    animation-name: light-rotate-2;
+    animation-name: light-rotate;
     animation-duration: 10s;
     animation-iteration-count: infinite;
   }
-  @keyframes light-rotate-2 {
+  @keyframes light-rotate {
     from { transform: rotateY(0turn); }
     to { transform: rotateY(1turn); }
   }

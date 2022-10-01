@@ -1,3 +1,5 @@
+@import './sectionsList';
+
 .main-topic {
   position: relative;
   display: flex;
@@ -8,9 +10,10 @@
   width: 90vw;
   max-width: 500px;
   min-height: 50vh;
+  height: 100%;
   max-height: 70vh;
   margin-top: .5rem;
-  margin-bottom: auto;
+  margin-bottom: calc(var(--crystal-size)/2);
   padding: 3rem 2rem;
   box-shadow: 0px 0px 25px 10px var(--text-color) inset;
   border-radius: 5px;

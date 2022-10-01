@@ -6,6 +6,7 @@ import { BlogSectionList } from '../components/BlogSectionList';
 import { BlogError } from '../components/BlogError';
 import { BlogLoading } from '../components/BlogLoading';
 // import { BlogEmpty } from '../components/BlogEmpty';
+import { Theme } from "../containers/Theme";
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 import '../styles/main.scss';
 import { getElementError } from '@testing-library/react';
@@ -29,15 +30,13 @@ function Home() {
           return(
 
             <React.Fragment>
+              <Theme 
+                theme = "cosmos"
+              />
 
               <BlogHeader />
 
               <div className='main-topic'>
-                {/* <div className='light'>
-                  <div className='light-1'></div>
-                  <div className='light-2'></div>
-                  <div className='light-3'></div>
-                </div> */}
                 <BlogSearch />
                 <nav className='topic-navigator'>
                   {sections.map( section => (
