@@ -87,22 +87,3 @@
 .topic-favorite__fill {
   fill: var(--text-color);
 }
-
-/* .light {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  
-  &-1 {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 20px;
-    height: 100%;
-    background-image: 
-        linear-gradient(268deg, transparent 50%, var(--text-color) 80%, transparent 90%),
-        linear-gradient(92deg, transparent 50%, var(--text-color) 80%, transparent 90%);
-    transform: rotate3d(0, 0, 1, 10deg); 
-  }
-} */

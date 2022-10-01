@@ -1,10 +1,13 @@
 import React from 'react';
 
-function Theme({children}) {
+function Theme() {
   return (
     <React.Fragment>
-      <div className='layout-theme'>
-        {children}
+      <div className='cosmos'>
+        <div className='space'>
+          <div className='stars'></div>
+          <div className='stars'></div>
+        </div>
       </div>
     </React.Fragment>
   );

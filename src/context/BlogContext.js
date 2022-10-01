@@ -81,12 +81,7 @@ function BlogProvider(props) {
     saveItem: saveComents,
     loading: comentsLoading,
     error: comentsError,
-  } = useLocalStorage([{
-    id: 1, 
-    text: "texto pibote =3", 
-    loved: false, 
-    topic: "not found"
-  }], 'COMENTS_V1');
+  } = useLocalStorage([], 'COMENTS_V1');
   
   const [openModal, setOpenModal] = React.useState(false);
   // const comentsLoved = coment.filter(c => !!c.loved).length;

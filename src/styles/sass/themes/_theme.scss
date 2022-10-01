@@ -1,28 +1,190 @@
-/* .body-decoration{
-  --start-height: 150px;
-  --start-width : -50px;
-  @include from(m){
-    --start-height: 100px;
-    --start-width : 0px;
-  }
-
+.cosmos {
   position: absolute;
-  z-index: var(--z-back);
-  overflow: hidden;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--background-color);
+  overflow: hidden;
+  cursor: pointer;
   pointer-events: none;
-  // clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, 80% 80%, 60% 80%, 60% 60%, 40% 60%, 40% 40%, 20% 40%, 20% 20%, 0 20%, 0 0 );
+  z-index: var(--z-back);
+}
+.space:nth-child(1) {
+  position: relative;
+  width: calc(70vw + 70vh);
+  height: calc(70vw + 70vh);
+  margin-top: -20vw;
+  margin-left: -10vw;
   background-image: 
-        linear-gradient(60deg, $decoration-color 2%, transparent 2%, transparent 98%, $decoration-color 98%),
-        linear-gradient(120deg, $decoration-color 2%, transparent 2%, transparent 98%, $decoration-color 98%),
-        radial-gradient(circle at 30rem 22rem, transparent 3rem, $decoration-color 3rem, $decoration-color 3.5rem, transparent 3.5rem),
-        radial-gradient(circle at 34rem 20rem, transparent 2rem, $decoration-color 2rem, $decoration-color 2.5rem, transparent 2.5rem),
-        radial-gradient(circle at 18rem 26rem, $decoration-color 1.5rem, transparent 1.5rem, transparent 3rem, $decoration-color 3rem, $decoration-color 3.5rem, transparent 3.5rem),
-        radial-gradient(ellipse at 7rem 23.5rem, transparent 1rem, $decoration-color 1rem, $decoration-color 1.5rem, transparent 1.5rem),
-        radial-gradient(circle at 12.5rem 12.5rem, $background-color 4rem, transparent 4rem),
-        radial-gradient(circle at 10rem 10rem, $decoration-color 8rem, transparent 8rem);
-  background-repeat: repeat;
-  background-size: 50rem 30rem;
-  background-position: var(--start-width) var(--start-height);
-} */
+    radial-gradient(circle at 10% 15%, var(--text-color) 1px, transparent 4px)
+  ;
+  background-size: 35% 50%;
+  transform-origin: left center;
+  transform: rotateZ(10deg);
+  @include from(m) {
+    margin-left: -5vw;
+  }
+}
+.stars {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+}
+.stars:nth-child(1) {
+  width: 120%;
+  height: 120%;
+  background-image: 
+      radial-gradient(circle at 10% 60%, var(--text-color) .3px, transparent 3.5px),
+      radial-gradient(circle at 3% 3%, var(--text-color) .3px, transparent 3.5px),
+      radial-gradient(circle at 85% 80%, var(--text-color) .3px, transparent 3.5px);
+  background-size:  25% 25%, 15% 25%, 30% 10%;
+  transform-origin: center center;
+  transform: rotateZ(-30deg);
+  animation-name: separateA;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.stars:nth-child(2) {
+  width: 120%;
+  height: 120%;
+  background-image: 
+      radial-gradient(circle at 26% 48%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 1% 1%, var(--text-color) .2px, transparent 2px),
+      radial-gradient(circle at 19% 67%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 58% 93%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 72% 37%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 37% 83%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 11% 90%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 68% 15%, var(--text-color) .1px, transparent 2px),
+      radial-gradient(circle at 68% 10%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 11% 90%, var(--text-color) .7px, transparent 2px),
+      radial-gradient(circle at 37% 83%, var(--text-color) .4px, transparent 2px),
+      radial-gradient(circle at 72% 37%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 58% 93%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 19% 67%, var(--text-color) .3px, transparent 2px),
+      radial-gradient(circle at 1% 1%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 26% 48%, var(--text-color) .8px, transparent 2px);
+  background-size:  35% 60%, 75% 45%, 70% 40%, 73% 46%, 63% 50%, 56% 36%, 56% 27%, 62% 34%, 30% 50%, 75% 55%, 70% 40%, 73% 46%, 63% 50%, 56% 46%, 56% 47%, 62% 34%;
+  transform-origin: center center;
+  transform: rotateZ(55deg);
+  animation-name: separateB;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes separateA {
+  from {
+    transform: rotate3d(0, 0, 1, 30deg) scale(70%);
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  65% {
+    opacity: 100%;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 30deg) scale(200%);
+    opacity: 0%;
+  }
+}
+@keyframes separateB {
+  from {
+    transform: rotate3d(0, 0, 1, 30deg) scale(70%);
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  65% {
+    opacity: 100%;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 30deg) scale(300%);
+    opacity: 0%;
+  }
+}
+/* 
+.comet {
+  position: fixed;
+  top: 50%;
+  left: -60%;
+  width:            50%;
+  height:           50%;
+  background-image: 
+  radial-gradient(circle at 91px 122px, rgba(240, 248, 255, 0.653) 0px, transparent 3px),
+  radial-gradient(circle at 95px 118px, rgba(240, 248, 255, 0.653) 0px, transparent 6px),
+  radial-gradient(circle at 100px 111px, rgba(240, 248, 255, 0.653) 0px, transparent 10px),
+  radial-gradient(circle at 110px 103px, rgba(240, 248, 255, 0.653) 0px, transparent 12px),
+  radial-gradient(circle at 120px 93px, rgba(240, 248, 255, 0.653) 0px, transparent 12px),
+  radial-gradient(circle at 130px 85px, rgba(240, 248, 255, 0.653) 0px, transparent 14px),
+  radial-gradient(circle at 140px 78px, rgba(240, 248, 255, 0.653) 0px, transparent 16px),
+  radial-gradient(circle at 108px 107px, aliceblue 0px, transparent 3px),
+  radial-gradient(circle at 100px 114px, aliceblue 0px, transparent 2px),
+  radial-gradient(circle at 114px 92px, aliceblue 0px, transparent 3px),
+  radial-gradient(circle at 128px 95px, aliceblue 0px, transparent 3px),
+  radial-gradient(circle at 115px 100px, aliceblue 0px, transparent 2px),
+  radial-gradient(circle at 125px 80px, aliceblue 0px, transparent 3px),
+  radial-gradient(circle at 122px 88px, aliceblue 0px, transparent 2px),
+  radial-gradient(circle at 138px 87px, aliceblue 0px, transparent 3px),
+  radial-gradient(circle at 134px 73px, aliceblue 0px, transparent 3px),
+      radial-gradient(circle at 150px 70px, aliceblue 2px, transparent 24px);
+  transform-origin: center bottom;
+  animation-name: comet;
+  animation-duration: 45s;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+  animation-direction: normal;
+}
+@keyframes comet {
+  from {
+    // left: var(--leftComet);
+    // transform: rotate3d(0, 0, 1, var(--rotateComet)) scale(100%) translate(0%);
+    opacity: 100%;
+  }
+  10% {
+    left: 100%;
+    transform: rotate3d(0, 0, 1, 80deg) scale(300%) translate(50%);
+    opacity: 100%;
+  }
+  11% {
+    left: 120%;
+    transform: rotate3d(0, 0, 1, 80deg) scale(300%) translate(50%);
+    opacity: 0%;
+  }
+  to {
+    left: 100%;
+    transform: rotate3d(0, 0, 1, 80deg) scale(300%) translate(50%);
+    opacity: 0%;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .comet {
+    --rotateComet: 35deg;
+    --leftComet: -60%;
+    top: 10%;
+  }
+}
+@media screen and (min-width: 480px) {
+  .container {
+    padding:        3em;
+    padding-top:    2em;
+  }
+  .comet {
+    --rotateComet: 25deg;
+    --leftComet: -40%;
+      top: 20%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .comet {
+    --rotateComet:  15deg;
+    --leftComet:    -40%;
+    top:            50%;
+  }
+}
+ */
