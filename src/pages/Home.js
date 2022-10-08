@@ -24,8 +24,8 @@ function Home() {
           sectionSelect,
           noneList,
           favoriteList,
-          sectionsLoading,
-          sectionsError,
+          favoriteTopicsLoading,
+          favoriteTopicsError,
         }) => {
           return(
 
@@ -39,6 +39,10 @@ function Home() {
               <div className='main-topic'>
                 <BlogSearch />
                 <nav className='topic-navigator'>
+                  
+                  {favoriteTopicsError && <BlogError error={favoriteTopicsError} />}
+                  {favoriteTopicsLoading && <BlogLoading loadType="loading-leaving" />}
+                  {/* {(!favoriteTopicsLoading && !(sections.length) ) && <BlogEmpty />} */}
                   {sections.map( section => (
                     <BlogNavigator
                       key={section.idSection} 
@@ -79,9 +83,6 @@ function Home() {
                   </div>
                 <nav className='sections-navigator'>
                   <ul className='sections-list layer-container'>
-                    {sectionsError && <BlogError error={sectionsError} />}
-                    {sectionsLoading && <BlogLoading />}
-                    {/* {(!sectionsLoading && !(sections.length) ) && <BlogEmpty />} */}
                     {sections.map( section => (
                       <BlogSectionList 
                         key={section.idSection} 

@@ -12,3 +12,4 @@ export const Estoicismo = () => {
 
 
 // https://www.youtube.com/watch?v=k9YSgwuYqko
+// https://www.youtube.com/watch?v=NMfUKzYvH2w

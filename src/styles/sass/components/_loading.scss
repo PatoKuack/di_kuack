@@ -7,5 +7,275 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  z-index: var(--z-fixed);
+}
+
+.loading > .cosmos {
+  pointer-events: all;
+  z-index: initial;
+
+  & > .space > .stars {
+    animation-name: none;
+    opacity: 100%;
+  }
+}
+
+.loading-spacecraft {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  z-index: 1;
+}
+
+.trunk {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 50px);
+  width: 150px;
+  height: 100px;
+  border-top-left-radius: 35%;
+  border-bottom-left-radius: 35%;
+}
+
+.arm, .leg {
+  position: absolute;
+  right: 70px;
+  width: 75px;
+  height: 33px;
+  border: 1px solid white;
+  border-radius: 12px;
+}
+.leg {
+  top: 60px;
+  right: 130px;
+  background-image: 
+    radial-gradient(circle at 0px 16.5px, pink 0px, black 40px)
+  ;
+}
+
+.spacecraft__front {
+  .trunk {
+    background-image: 
+      // radial-gradient(50px 100px at 145px 65px, black 4px, transparent 4px),
+      radial-gradient(10px 5px at 126px 33px, white 5px, transparent 5px),
+      radial-gradient(circle at 137px 40px, white 5px, transparent 5px),
+      radial-gradient(circle at 123px 50px, cyan 23px, transparent 23px),
+      radial-gradient(circle at 123px 50px, black 24px, transparent 24px),
+      radial-gradient(circle at 112.5px 50px, beige 37px, transparent 37px),
+      radial-gradient(circle at 45px 50px, beige 52px, transparent 52px),
+    ;
+  }
+  .arm:nth-child(1) {
+    top: 35px;
+    background-image: 
+      radial-gradient(circle at 0px 33px, beige 0px, black 40px)
+    ;
+    border-radius: 12px 20px 10px 12px;
+  }
+  .arm:nth-child(2) {
+    bottom: 35px;
+    background-image: 
+      radial-gradient(circle at 0px 0px, beige 0px, black 40px)
+    ;
+    border-radius: 12px 10px 20px 12px;
+  }
+  .leg:nth-child(4) {
+    top: auto;
+    bottom: 60px;
+  }
+}
+
+
+.spacecraft__side {
+  .trunk {
+    background-image: 
+      radial-gradient(50px 100px at 140px 55px, black 4px, transparent 4px),
+      radial-gradient(250px 150px at 37px 0px, transparent 35px, beige 35px),
+      radial-gradient(10px 5px at 120px 28px, white 5px, transparent 5px),
+      radial-gradient(circle at 134px 30px, white 5px, transparent 5px),
+      radial-gradient(circle at 123px 25px, cyan 23px, transparent 23px),
+      radial-gradient(circle at 123px 25px, black 24px, transparent 24px),
+      radial-gradient(circle at 112.5px 50px, beige 37px, transparent 37px),
+      radial-gradient(circle at 45px 50px, beige 52px, transparent 52px),
+    ;
+    background-size: contain, 48px 35px, contain, contain, contain, contain, contain, contain;
+    background-position: 0% 0%, 97px 17px, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-repeat: no-repeat;
+  }
+  .arm {
+    top: calc(50% - 15.5px);
+    background-image: 
+      radial-gradient(circle at 0px 16.5px, beige 0px, black 40px)
+    ;
+    border-radius: 12px 20px 20px 12px;
+    z-index: 2;
+  }
+  .leg {
+    top: calc(50% - 15.5px);
+    z-index: 1;
+  }
+}
+
+.spacecraft__front, .spacecraft__side {
+  animation-duration: .75s;
+}
+
+.propulsion {
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  width: 20px;
+  height: 80px;
+  background-image: 
+    radial-gradient(15px 150px, transparent 1px, rgb(216, 194, 216) 2px, rgb(216, 194, 216) 3px, transparent 4px)
+  ;
+  animation-name: propulsion;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.propulsion:nth-child(4) {
+  animation-delay: .5s;
+}
+
+.loading-text {
+  font-size: var(--h1-font-size);
+  z-index: 1;
+}
+.loading-planet {
+  position: absolute;
+  bottom: -175px;
+  left: -175px;
+  width: 550px;
+  height: 550px;
+  background-image: 
+    radial-gradient(circle at 0% 100%, rgb(255, 227, 175) 0%, orange 50%, rgba(255, 245, 226, 0.5) 50%, transparent 52%)
+  ;
+  z-index: 1;
+}
+.loading-planet__earth {
+  position: absolute;
+  bottom: 30px;
+  left: 25px;
+  width: 80px;
+  height: 40px;
+  background-image: 
+    radial-gradient(circle at 0% 100%, transparent 0px, orange 20px, orange 30px, transparent 30px),
+    radial-gradient(circle at 50% 130%, transparent 0px, orange 20px, orange 30px, transparent 30px),
+    radial-gradient(circle at 100% 100%, transparent 0px, orange 20px, orange 30px, transparent 30px)
+  ;
+  border-radius: 50%;
+  transform: rotateZ(45deg);
+  z-index: 2;
+}
+
+// --- diferenciador del loading principal y secundario ---
+.loading-leaving {
+  bottom: 50vh;
+  left: calc(50vw - 125px);
+  transform: scale3d(.5, .5, 1);
+  animation-name: spacecraft-in-out, spacecraft-out, turbulence;
+  animation-duration: .75s, .5s, 5s;
+  animation-delay: 0s, 0s, 5s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-timing-function: linear, linear, ease;
+  
+  & .spacecraft__front {
+    opacity: 0%;
+    animation-name: appear;
+  }
+  & .spacecraft__side{
+    animation-name: disappear;
+  }
+}
+
+.loading-arriving {
+  left: 20px;
+  bottom: 30px;
+  transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
+  animation-name: spacecraft-in-out, spacecraft-in;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-direction: reverse, normal;
+
+  & .spacecraft__front{
+    animation-name: disappear;
+  }
+  & .spacecraft__side {
+    animation-name: appear;
+    opacity: 0%;
+  }
+  /* & .propulsion {
+    animation-name: propulsion, appear;
+    animation-iteration-count: 1;
+    opacity: 0%;
+  } */
+}
+
+
+// --------------------------------------------
+
+@keyframes spacecraft-in-out {
+  from {
+    left: 20px;
+    bottom: 30px;
+  }
+  50% {
+    left: calc(35vw - 125px);
+    bottom: 50vh;
+  }
+  to {
+    left:calc(50vw - 125px);
+    bottom: 50vh;
+  }
+}
+@keyframes spacecraft-in {
+  from {
+    transform: rotate3d(0, 1, 0, 180deg) scale3d(.5, .5, 1);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 20deg) scale3d(.5, .5, 1);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+  }
+}
+@keyframes spacecraft-out {
+  from {
+    transform: rotate3d(0, 0, 1, 315deg) scale3d(1, 1, 1);
+  }
+  50% {
+    transform: rotate3d(0, 0, 1, 360deg) scale3d(.5, .5, 1);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 360deg) scale3d(.5, .5, 1);
+  }
+}
+
+@keyframes disappear {
+  from { opacity: 0%; }
+  to { opacity: 0%; }
+}
+@keyframes appear {
+  from { opacity: 100%; }
+  to { opacity: 100%; }
+}
+
+@keyframes turbulence {
+  from { bottom: 50vh; }
+  3% { bottom: calc(50vh - 4px); }
+  6% { bottom: calc(50vh + 4px); }
+  9% { bottom: calc(50vh - 4px); }
+  12% { bottom: calc(50vh + 4px); }
+  15% { bottom: 50vh; }
+}
+
+@keyframes propulsion {
+  from {
+    transform: scale3d(1, 1, 1);
+    left: 20px;
+  }
+  to {
+    transform: scale3d(.3, .3, .3);
+    left: 5px;
+  }
 }

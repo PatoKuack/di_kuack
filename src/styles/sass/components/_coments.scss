@@ -124,7 +124,8 @@
   filter: hue-rotate(300deg);
   color: inherit;
 }
-.coments-reaction__loved:hover {
-  filter: grayscale(70%) opacity(90%);
-  transform: scale(110%) translateX(1rem);
+@include from(m) {
+  .coments-reaction__loved:hover {
+    filter: grayscale(70%) opacity(90%);
+  }
 }

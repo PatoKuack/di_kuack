@@ -8,6 +8,7 @@ function BlogContent() {
         {({topicSelect}) => {
           return(
             <section className='topic-content'>
+              <div className='topic-content__background'></div>
 
               {topicSelect().component}
 

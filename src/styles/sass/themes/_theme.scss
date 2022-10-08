@@ -1,4 +1,11 @@
 :root {
+  --planet-bg-color: rgb(126, 29, 174);
+  --liana-color:    peru;
+  --trunk-color:    sandybrown;
+  --flower-color-A: Moccasin;
+  --flower-color-B: orange;
+  --sky-color:      rgb(90, 25, 112);
+
   --decoration-size: calc(70vw + 70vh);
 }
 
@@ -10,7 +17,6 @@
   height: 100%;
   background-color: var(--background-color);
   overflow: hidden;
-  cursor: pointer;
   pointer-events: none;
   z-index: var(--z-back);
 }
@@ -77,6 +83,7 @@
   animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  opacity: 0%;
 }
 .stars:nth-child(3) {
   animation-delay: 15s;
@@ -118,5 +125,65 @@
 // ------------------------------------------
 
 .planet {
-  background-color: var(--background-color);
+  background-color: var(--planet-bg-color);
 }
+
+.flora {
+  /* position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: cyan; */
+}
+.fauna:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  // background-color: red;
+  background-image:
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px),
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px),
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px),
+    
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px),
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px),
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color) 30px, var(--liana-color) 32px, transparent 32px)
+  ;
+  background-size: 60px 185px, 60px 185px, 60px 185px, 60px 185px, 60px 185px, 60px 185px;
+  background-position: 80px -7px, 80px 18px, 80px 43px, 25px 32px, 25px 55px, 25px 80px;
+}
+.fauna:nth-child(2) {
+  position: absolute;
+  left: -5%;
+  bottom: 48%;
+  width: 110%;
+  height: 52%;
+  background-image: 
+    radial-gradient(80px 160px at 45px 82.5px, transparent 40px, var(--trunk-color) 40px, var(--trunk-color) 45px, var(--sky-color) 45px)
+  ;
+  background-size: 180px 165px;
+  background-position: -5% 0%;
+}
+.fauna:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 50%;
+  background-image: 
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A) 5px, var(--flower-color-B) 20px, transparent 20px)
+  ;
+  background-size: 82px 32px, 140px 70px, 134px 67px, 100px 50px, 90px 45px, 70px 35px, 50px 25px;
+}
+
+
+// ------------------------------------------

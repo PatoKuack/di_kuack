@@ -3,8 +3,8 @@ import { BlogContent } from "../components/BlogContent";
 import { ComentsForm } from "../components/ComentsForm";
 import { ComentsItem } from "../components/ComentsItem";
 import { ComentsList } from "../components/ComentsList";
-import { ComentError } from '../components/ComentError';
-import { ComentLoading } from '../components/ComentLoading';
+import { BlogError } from '../components/BlogError';
+import { BlogLoading } from '../components/BlogLoading';
 import { Theme } from "../containers/Theme";
 // import { ComentEmpty } from '../components/ComentEmpty';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
@@ -50,8 +50,8 @@ function Blog() {
                 <p className='coments-counter'>{plural()}</p>
                 <ul className='coments-list'>
                   
-                  {comentsError && <ComentError error={comentsError} />}
-                  {comentsLoading && <ComentLoading />}
+                  {comentsError && <BlogError error={comentsError} />}
+                  {comentsLoading && <BlogLoading loadType="loading-arriving" />}
                   {(!comentsLoading && !(totalTopicComents()) ) && <p className='coments-warningtext'>Los mensajes se guardarán en tu navegador y sólo los podrás ver tú, así que <b><u>puedes utilizarlos</u></b> para crear <b><u>notas personales</u></b> hasta que yo sepa cómo conectarlos en línea =P</p>}
                   {comentValues.map( comented => (
                     <ComentsItem 

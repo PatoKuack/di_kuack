@@ -1,10 +1,20 @@
 :root {
+  --sections-margin-I: 20vw;
+  --sections-margin-II: 30vw;
+  --sec-item-margin-I: 0px;
+  --sec-item-margin-II: 0px;
+
   --crystal-size: 50px;
   --bulb-size: 0px;
   @include from(m) {
+    --sections-margin-II: 20vw;
+    --sec-item-margin-I: 5px;
+    --sec-item-margin-II: 15px;
+
     --bulb-size: 30px;
   }
   @include from(l) {
+    --sections-margin-I: 25vw;
     --bulb-size: 50px;
   }
 }
@@ -24,7 +34,7 @@
   width: 120vw;
   margin-left: -10vw;
   padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   z-index: var(--z-toltip);
   background-image: 
       radial-gradient(at 25% 50%, transparent 60%, var(--text-color) 80%),
@@ -36,8 +46,12 @@
       background-size: 200% 300%, 50% 50%, 50% 50%, contain, contain, contain;
       // background-position: 50% 200%, 0 0, 0 0, 0 0;
   border-radius: 50% 50% 0 0;
+  @include from(m){
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
   @include from(l){
-    padding-top: 3rem;
+    padding-top: 3.5rem;
     padding-bottom: 2rem;
   }
 }
@@ -45,7 +59,8 @@
   position: relative;
   grid-column: 1/5;
   width: fit-content;
-  padding: .1rem .5rem;
+  height: fit-content;
+  padding: 0rem .5rem .2rem .5rem;
   background-color: var(--alternative-color);
   color: var(--background-color);
   border: 1px solid var(--background-color);
@@ -64,21 +79,27 @@
 }
 .sections-item:nth-child(2), .sections-item:nth-child(3){
   grid-row: 2/3;
+  @include from(m) {
+    margin-top: var(--sec-item-margin-I);
+    grid-row: 1/2;
+  }
 }
 .sections-item:nth-child(4), .sections-item:nth-child(5){
   grid-row: 3/4;
+  @include from(m) {
+    margin-top: var(--sec-item-margin-II);
+    grid-row: 1/2;
+  }
 }
-.sections-item:nth-child(2), .sections-item:nth-child(4){
+.sections-item:nth-child(4), .sections-item:nth-child(2){
   justify-self: start;
-  margin-left: 20vw;
+  margin-left: var(--sections-margin-I);
   transform: rotate3d(0, 0, 1, -5deg);
-  // margin-left: calc(20vw + 5%);
 }
 .sections-item:nth-child(3), .sections-item:nth-child(5){
   justify-self: end;
-  margin-right: 20vw;
+  margin-right: var(--sections-margin-I);
   transform: rotate3d(0, 0, 1, 5deg);
-  // margin-right: calc(20vw + 5%);
   & .sections-item__spotlight {
     transform: rotateX(180deg) rotateZ(-90deg);
   }
@@ -98,6 +119,8 @@
 @include from(m) {
   .sections-item:nth-child(2){
     grid-column: 2/5;
+    margin-left: var(--sections-margin-II);
+    transform: rotate3d(0, 0, 1, -3deg);
   }
   .sections-item:nth-child(3){
     grid-column: 5/8;
@@ -109,6 +132,8 @@
   }
   .sections-item:nth-child(3){
     grid-column: 8/11;
+    margin-right: var(--sections-margin-II);
+    transform: rotate3d(0, 0, 1, 3deg);
   }
 }
 .sections-item__button{
@@ -139,8 +164,10 @@
   }
 }
 
-.sections-item:hover {
-  filter:brightness(90%);
+@include from(m) {
+  .sections-item:hover {
+    filter:brightness(90%);
+  }
 }
 .sections-item__selected {
   border: 1px solid var(--outline-color);
@@ -157,7 +184,7 @@
 
 .light {
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% - 2px);
   left: 5vw;
   width: 90vw;
   height: 50vh;
@@ -181,12 +208,21 @@
   &-1 {
     left: 0;
     width: 100%;
+    height: calc((var(--crystal-size) / 2) + 4px);
+    /* 
     height: 100%;
     background-image: 
         linear-gradient(33deg ,transparent 50%, var(--background-color) 75%),
         linear-gradient(327deg ,transparent 50%, var(--background-color) 75%),
         linear-gradient(33deg, transparent 18%, var(--text-color) 20%, transparent 25%, transparent 100%),
         linear-gradient(327deg, transparent 18%, var(--text-color) 20%, transparent 25%, transparent 100%);
+     */
+    background-image: 
+        linear-gradient(to right, var(--background-color) 0px, transparent 15px),
+        linear-gradient(to left, var(--background-color) 0px, transparent 15px),
+        linear-gradient(7.5deg, transparent 26px, var(--text-color) 24px, transparent 48px),
+        linear-gradient(352.5deg, transparent 26px, var(--text-color) 24px, transparent 48px)
+    ;
   }
   &-2__content {
     left: calc(50% - 15px);
