@@ -93,6 +93,23 @@
   animation-delay: 15s;
   transform: rotateZ(-55deg);
 }
+
+.stars:nth-child(1), .stars:nth-child(2), .stars:nth-child(3) {
+  animation-name: none;
+  opacity: 100%;
+}
+@include from(m){
+  .stars:nth-child(1) {
+    animation-name: separateA;
+    opacity: 100%;
+  }
+  .stars:nth-child(2), .stars:nth-child(3) {
+    animation-name: separateB;
+    opacity: 100%;
+  }
+
+}
+
 @keyframes separateA {
   from {
     transform: rotate3d(0, 0, 1, 30deg) scale(70%);
@@ -124,11 +141,6 @@
     transform: rotate3d(0, 0, 1, 30deg) scale(300%);
     opacity: 0%;
   }
-}
-
-.stars:nth-child(2), .stars:nth-child(3) {
-  animation-name: none;
-  opacity: 100%;
 }
 
 // ------------------------------------------
