@@ -61,9 +61,8 @@
   height: fit-content;
   padding: 0rem .5rem;
   padding-bottom: 1px;
-  background-color: var(--alternative-color);
-  color: var(--background-color);
-  border: 1px solid var(--background-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--text-color);
   cursor: pointer;
 
   @include from(m) {
@@ -137,7 +136,7 @@
   }
 }
 .sections-item__button{
-  color: var(--background-color);
+  color: var(--text-color);
   font-weight: 600;
   filter: blur(.34px);
 }
