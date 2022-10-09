@@ -106,10 +106,10 @@
 .sections-item:nth-child(5) {
   pointer-events: none;
   background-image: 
-      linear-gradient(30deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
-      linear-gradient(140deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
-      linear-gradient(10deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%),
-      linear-gradient(146deg, transparent 70%, var(--background-color) 70%, var(--background-color) 74%, transparent 74%);
+      linear-gradient(30deg, transparent 70%, var(--selection-color) 70%, var(--selection-color) 74%, transparent 74%),
+      linear-gradient(140deg, transparent 70%, var(--selection-color) 70%, var(--selection-color) 74%, transparent 74%),
+      linear-gradient(10deg, transparent 70%, var(--selection-color) 70%, var(--selection-color) 74%, transparent 74%),
+      linear-gradient(146deg, transparent 70%, var(--selection-color) 70%, var(--selection-color) 74%, transparent 74%);
   background-position: 75% -2px, 75% -8.3px, 75% -13.7px, 75% -21px;
   background-size: 10px;
   background-repeat: repeat-y;

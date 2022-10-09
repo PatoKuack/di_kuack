@@ -126,6 +126,11 @@
   }
 }
 
+.stars:nth-child(2), .stars:nth-child(3) {
+  animation-name: none;
+  opacity: 100%;
+}
+
 // ------------------------------------------
 
 .planet {
