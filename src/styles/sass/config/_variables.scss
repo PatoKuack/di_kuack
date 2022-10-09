@@ -8,25 +8,15 @@ $breackpoints: (
 
 //Paleta de colores (temas brilloso/oscuro):
 :root{
-  // --first-color       : #f6fdff;
-  // --border-color      : #b8eafd;
   --background-color  : #0f2e49;
   --text-color        : #e1f6f9;
   --alternative-color : #f5f5dc;
   --selection-color   : #fbff00e3;
-  // --alert-color       : ;
-  // --second-color      : #f3ecf7;
-  // --decoration-color  : #e0f8fa;
-  // --checked-color     : #2196F3;
   --outline-color     : #7bfb70;
   --consol-color-A    : #467ca5;
-  // --consol-color-B    : #9b11ba;
   --consol-color-B    : #bb02bb76;
-
-  /* 
-  --alert-color       : #CDBAF5
-  #0E8CA7
-  */
+  --scroll-in-color   : #CDBAF5;
+  // --scroll-out-color  : #0E8CA7;
 }
 
 //Variables de apilamiento (z-index):
@@ -46,6 +36,7 @@ $breackpoints: (
   --body-font-size  : .9rem;
   --small-font-size : .75rem;
   --line-height     : 1.2rem;
+  --scroll-width    : 10px;
   //-------------------------------------
   @media screen and (min-width: map_get($breackpoints, m)){
     --h1-font-size    : 2rem;

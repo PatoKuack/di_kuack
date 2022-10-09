@@ -174,17 +174,19 @@
   left: calc(50vw - 125px);
   transform: scale3d(.5, .5, 1);
   animation-name: spacecraft-in-out, spacecraft-out, turbulence;
-  animation-duration: .75s, .5s, 5s;
+  animation-duration: 1.5s, 1.5s, 5s;
   animation-delay: 0s, 0s, 5s;
   animation-iteration-count: 1, 1, infinite;
-  animation-timing-function: linear, linear, ease;
+  animation-timing-function: ease-in, ease-in, ease;
   
   & .spacecraft__front {
     opacity: 0%;
     animation-name: appear;
+    animation-duration: 1s;
   }
   & .spacecraft__side{
     animation-name: disappear;
+    animation-duration: 1s;
   }
 }
 
@@ -194,14 +196,16 @@
   transform: rotate3d(0, 1, 0, 180deg) rotate3d(0, 0, 1, 45deg);
   animation-name: spacecraft-in-out, spacecraft-in;
   animation-duration: 1.5s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-out;
   animation-direction: reverse, normal;
 
   & .spacecraft__front{
     animation-name: disappear;
+    animation-duration: 1s;
   }
   & .spacecraft__side {
     animation-name: appear;
+    animation-duration: 1s;
     opacity: 0%;
   }
   /* & .propulsion {
@@ -284,7 +288,7 @@
 
 
 // --------------SIMPLIFICACIÓN DE ANIMACIÓN----------------
-.loading-leaving {
+/* .loading-leaving {
   & .spacecraft__side{
     animation-name: none;
   }
@@ -297,4 +301,4 @@
 }
 .spacecraft__front {
   display: none;
-}
+} */

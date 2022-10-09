@@ -69,22 +69,22 @@ input::placeholder, textarea::placeholder {
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--background-color) var(--text-color);
+  scrollbar-color: var(--scroll-in-color) transparent;
 }
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 12px;
+  width: var(--scroll-width);
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--text-color);
+  background: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--background-color);
+  background-color: var(--scroll-in-color);
   border-radius: 20px;
-  border: 3px solid var(--text-color);
+  // border: 3px solid transparent;
 }
 
 
