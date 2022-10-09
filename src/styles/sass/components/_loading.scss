@@ -217,33 +217,30 @@
     animation-duration: 1s;
     opacity: 0%;
   }
-  /* & .propulsion {
-    animation-name: propulsion, appear;
-    animation-iteration-count: 1;
-    opacity: 0%;
-  } */
 }
 
+@media screen and (max-width: 500px){
+  // --------------SIMPLIFICACIÓN DE ANIMACIÓN----------------
+  .loading-leaving {
+    animation-name: none;
+    & .spacecraft__side{
+      animation-name: none;
+    }
+  }
+  .loading-arriving {
+    animation-name: none;
+    & .spacecraft__side {
+      animation-name: none;
+      opacity: 100%;
+    }
+  }
+  .spacecraft__front {
+    display: none;
+  }
+}
 
 // --------------------------------------------
 
-/* @keyframes spacecraft-in-out {
-  from {
-    transform: translate3d(calc(125px - 50vw), 50vh, 0px);
-    // left: 20px;
-    // bottom: 30px;
-  }
-  50% {
-    transform: translate3d(calc(125px - 35vw), 0vh, 0px);
-    // left: calc(35vw - 125px);
-    // bottom: 50vh;
-  }
-  to {
-    transform: translate3d(0px, 0px, 0px);
-    // left:calc(50vw - 125px);
-    // bottom: 50vh;
-  }
-} */
 @keyframes spacecraft-in {
   from {
     transform: 
@@ -324,18 +321,3 @@
 
 
 
-// --------------SIMPLIFICACIÓN DE ANIMACIÓN----------------
-/* .loading-leaving {
-  & .spacecraft__side{
-    animation-name: none;
-  }
-}
-.loading-arriving {
-  & .spacecraft__side {
-    animation-name: none;
-    opacity: 100%;
-  }
-}
-.spacecraft__front {
-  display: none;
-} */
