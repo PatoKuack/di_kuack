@@ -89,7 +89,7 @@
 .spacecraft__side {
   .trunk {
     background-image: 
-      radial-gradient(50px 100px at 140px 55px, black 4px, transparent 4px),
+      radial-gradient(50px 100px at 143px 55px, black 5px, transparent 5px),
       radial-gradient(250px 150px at 37px 0px, transparent 35px, beige 35px),
       radial-gradient(10px 5px at 120px 28px, white 5px, transparent 5px),
       radial-gradient(circle at 134px 30px, white 5px, transparent 5px),
@@ -278,4 +278,23 @@
     transform: scale3d(.3, .3, .3);
     left: 5px;
   }
+}
+
+
+
+
+// --------------SIMPLIFICACIÓN DE ANIMACIÓN----------------
+.loading-leaving {
+  & .spacecraft__side{
+    animation-name: none;
+  }
+}
+.loading-arriving {
+  & .spacecraft__side {
+    animation-name: none;
+    opacity: 100%;
+  }
+}
+.spacecraft__front {
+  display: none;
 }

@@ -59,16 +59,16 @@ $breackpoints: (
 
 //Otros valores:
 :root{
-
   --outline-styles      : .1rem solid var(--outline-color);
-  --font-family-first: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Open Sans', 'sans-serif';
-
+  --font-family-first   : -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Open Sans', 'sans-serif';
+  
   @media screen and (min-width: map_get($breackpoints, m)){
   }
-
 }
 
-/* $header-height  : var(--header-height);
+
+/* 
+$header-height  : var(--header-height);
 $max-width      : 1280px;
 $min-space      : .5rem;
 $normal-space   : 1rem;
@@ -80,4 +80,5 @@ $background-color   : var(--background-color);
 $bg-alternative     : var(--first-color);
 $button-color       : var(--alert-color);
 $button-alternative : var(--second-color);
-$decoration-color   : var(--decoration-color); */
+$decoration-color   : var(--decoration-color);
+ */

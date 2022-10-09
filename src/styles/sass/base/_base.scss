@@ -25,6 +25,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   min-height: 100vh;
+  height: 100%;
 }
 
 h1{
@@ -53,15 +54,39 @@ img{
   /* Light */
   // filter: brightness(1) contrast(1);
 }
+input {
+  background-color: transparent;
+}
 input::placeholder, textarea::placeholder {
   color: currentColor;
 }
-
 
 .margin-auto{
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-color) var(--text-color);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--text-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--background-color);
+  border-radius: 20px;
+  border: 3px solid var(--text-color);
+}
+
 
 // ------------------ js --------------
 

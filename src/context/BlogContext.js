@@ -1,5 +1,5 @@
 import React from 'react';
-import { researchList, adventuresList, phrasesList, noneList, sectionsList } from '../context/blogLists';
+import { researchList, adventuresList, phrasesList, recipesList, noneList, sectionsList } from '../context/blogLists';
 import { useLocalStorage } from './useLocalStorage';
 
 const BlogContext = React.createContext();
@@ -53,6 +53,8 @@ function BlogProvider(props) {
       topicElements = adventuresList[compareTopics(adventuresList)];
     } else if(compareTopics(phrasesList) >= 0 ) {
       topicElements = phrasesList[compareTopics(phrasesList)];
+    } else if(compareTopics(recipesList) >= 0 ) {
+      topicElements = recipesList[compareTopics(recipesList)];
     } else {
       topicElements = noneList[0];
     }

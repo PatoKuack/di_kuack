@@ -23,14 +23,14 @@ function BlogTopicItem(props) {
   return (
     <React.Fragment>
       <li className='topic-item'>
-        <input 
-          type={'checkbox'} 
-          className='topic-item__input' 
-          id='topic-input'
-          onClick = { onFavorite }
-          checked={(favoriteList.includes(props.topic)) && "true"}
-        ></input>
         <span className='topic-item__favorite'>
+          <input 
+            type = {'checkbox'} 
+            className = 'topic-item__input' 
+            id = 'topic-input'
+            onChange = { onFavorite }
+            checked = {(favoriteList.includes(props.topic)) && true}
+          ></input>
           <svg 
             width="100%" 
             height="100%" 

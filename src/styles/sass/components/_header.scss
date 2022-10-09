@@ -1,7 +1,13 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  // height: $header-height;
   margin: 1rem 0;
   color: var(--background-color);
-  text-align: center;
+  // text-align: center;
   // text-shadow: 1px 1px 0px var(--text-color), -1px -1px 0px var(--text-color), 1px -1px 0px var(--text-color), -1px 1px 0px var(--text-color);
   text-shadow: 1px 0px 0px var(--text-color), -1px 0px 0px var(--text-color), 0px -1px 0px var(--text-color), 0px 1px 0px var(--text-color);
 }

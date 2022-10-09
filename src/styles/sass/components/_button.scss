@@ -8,13 +8,15 @@
   box-shadow: 2px 0px 1px var(--consol-color-B);
   cursor: pointer;
 }
-.button:hover {
-  filter: brightness(95%);
-}
 .button:active{
   filter: brightness(85%);
   box-shadow: 2px 0px 1px var(--consol-color-B) inset;
   transform: scale(90%);
+}
+@include from(m) {
+  .button:hover {
+    filter: brightness(95%);
+  }
 }
 
 .no-styles-button {
@@ -25,5 +27,5 @@
 .no-styles-button:active {
   filter: none;
   box-shadow: none;
-  transform: scale(105%);
+  transform: scale(100%);
 }

@@ -14,6 +14,8 @@ import { NickVujicic } from '../Blogs/Phrases/NickVujicic';
 import { Estoicismo } from '../Blogs/Phrases/Estoicismo';
 import { Taoismo } from '../Blogs/Phrases/Taoismo';
 import { Otros } from '../Blogs/Phrases/Otros';
+/* ---------------------Phrases------------------------- */
+import { TeAntiEstres } from '../Blogs/Recipes/TeAntiEstres';
 
 
 const researchList = [
@@ -32,6 +34,9 @@ const phrasesList = [
   {id: 3, topic: "Estoicismo", component: <Estoicismo />},
   {id: 4, topic: "Taoísmo", component: <Taoismo />},
 ];
+const recipesList = [
+  {id: 1, topic: "Té anti-estres", component: <TeAntiEstres />},
+];
 
 function compareLlist( a, b ) {
   if ( a.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n') < b.topic.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n')){
@@ -45,6 +50,7 @@ function compareLlist( a, b ) {
 researchList.sort(compareLlist);
 adventuresList.sort(compareLlist);
 phrasesList.sort(compareLlist);
+recipesList.sort(compareLlist);
 
 phrasesList.push({id: phrasesList.length + 1, topic: "Otros", components: <Otros />});
 const noneList = [
@@ -55,8 +61,8 @@ const sectionsList = [
   {idSection: 1, name: "Investigación", selected: false, list: researchList},
   {idSection: 2, name: "Aventuras", selected: false, list: adventuresList},
   {idSection: 3, name: "Frases", selected: true, list: phrasesList},
-  {idSection: 4, name: "favoritos", selected: false, list: noneList},
+  {idSection: 4, name: "Recetas", selected: false, list: recipesList},
   {idSection: 5, name: "otros", selected: false, list: noneList}
 ];
 
-export { researchList, adventuresList, phrasesList, noneList, sectionsList }
+export { researchList, adventuresList, phrasesList, recipesList, noneList, sectionsList }

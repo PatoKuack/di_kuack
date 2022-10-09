@@ -38,8 +38,6 @@
 }
 .coments-form__textarea {
   width: 100%;
-  // height: fit-content;
-  // min-height: 3rem;
   max-height: 7rem;
   padding: .15rem .4rem;
   padding-right: calc(var(--form-bottom-size) + 1rem);
@@ -55,8 +53,8 @@
 .coments-form__button {
   position: absolute;
   right: var(--botton-margin);
-  bottom: calc(var(--botton-margin) + .15rem);
-  // min-width: var(--form-bottom-size);
+  // bottom: calc(var(--botton-margin) + .15rem);
+  top: calc(100% + var(--botton-margin));
   min-height: var(--form-bottom-size);
   padding: 0 .3rem;
   font-size: var(--small-font-size);
