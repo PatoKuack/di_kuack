@@ -26,7 +26,6 @@ function BlogLoading( props ) {
           </div>
           <div className='propulsion'></div>
           <div className='propulsion'></div>
-          {/* <div className='smoke'></div> */}
         </div>
         <p className='loading-text'>Cargando ...</p>
       </div>

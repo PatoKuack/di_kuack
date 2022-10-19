@@ -1,7 +1,7 @@
 import React from 'react';
 import { CreateButton } from '../components/CreateButton';
-import { ModalDelComent } from "./ModalDelComent";
 import { BlogIcon } from '../components/BlogIcon';
+import { ModalDelComent } from "./ModalDelComent";
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
 
 function ComentsItem(props) {

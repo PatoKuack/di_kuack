@@ -4,7 +4,8 @@ import { ComentsForm } from "../components/ComentsForm";
 import { ComentsItem } from "../components/ComentsItem";
 import { ComentsList } from "../components/ComentsList";
 import { BlogError } from '../components/BlogError';
-import { BlogLoading } from '../components/BlogLoading';
+// import { BlogLoading } from '../components/BlogLoading';
+import { ComentsLoading } from '../components/ComentsLoading';
 import { Theme } from "../containers/Theme";
 // import { ComentEmpty } from '../components/ComentEmpty';
 import { BlogProvider, BlogContext } from  "../context/BlogContext";
@@ -44,14 +45,18 @@ function Blog() {
                 theme = "planet"
               />
 
+              {/* <BlogLoading loadType="loading-arriving" /> */}
+
               <BlogContent />
               <ComentsList>
                 <ComentsForm />
                 <p className='coments-counter'>{plural()}</p>
                 <ul className='coments-list'>
                   
+                  {/* {comentsError && <BlogError error={comentsError} />}
+                  {comentsLoading && <BlogLoading loadType="loading-arriving" />} */}
                   {comentsError && <BlogError error={comentsError} />}
-                  {comentsLoading && <BlogLoading loadType="loading-arriving" />}
+                  {comentsLoading && <ComentsLoading />}
                   {(!comentsLoading && !(totalTopicComents()) ) && <p className='coments-warningtext'>Los mensajes se guardarán en tu navegador y sólo los podrás ver tú, así que <b><u>puedes utilizarlos</u></b> para crear <b><u>notas personales</u></b> hasta que yo sepa cómo conectarlos en línea =P</p>}
                   {comentValues.map( comented => (
                     <ComentsItem 
