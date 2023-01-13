@@ -4,6 +4,8 @@ import { NotFound } from '../pages/NotFound';
 import { ArbolBaobab } from '../Blogs/Research/ArbolBaobab';
 import { ArbolBore } from '../Blogs/Research/ArbolBore';
 import { Platon } from '../Blogs/Research/Platon';
+import { Dormir } from '../Blogs/Research/Dormir';
+import { Uchuva } from '../Blogs/Research/Uchuva';
 /* ---------------------Adventures------------------------- */
 import { PrimeraCarrera } from '../Blogs/Adventures/PrimeraCarrera';
 import { SegundaCarrera } from '../Blogs/Adventures/SegundaCarrera';
@@ -22,6 +24,8 @@ const researchList = [
   {id: 1, topic: "Árbol Baobab", component: <ArbolBaobab />},
   {id: 2, topic: "Árbol Bore", component: <ArbolBore />},
   {id: 3, topic: "Platón", component: <Platon />},
+  {id: 4, topic: "Dormir", component: <Dormir />},
+  {id: 5, topic: "Uchuva", component: <Uchuva />},
 ];
 const adventuresList = [
   {id: 1, topic: "Primera carrera", component: <PrimeraCarrera />},
