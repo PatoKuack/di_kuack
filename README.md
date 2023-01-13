@@ -7,6 +7,8 @@ A space-themed blog where you can find topics of my interest.
 - Contains a search section to easily find a topic.
 - Preferred themes can be marked or unmarked by directly clicking on the star next to the theme.
 - By changing the sections of the board you will find different themes.
+- Within the reading you can place comments or delete comments.
+- Comments can be given a "like" rating.
 
 ### What was most difficult for me was...
 The design in SaSS and the deployment of the application, since being my first app in React it was a challenge to figure out how to upload dynamic projects to cloud platforms.
@@ -18,4 +20,4 @@ The design in SaSS and the deployment of the application, since being my first a
     SaSS
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/) Copyright (c) 2022 David Alejandro Ramírez Pérez ([@PatoKuack](https://github.com/PatoKuack))
+[MIT](https://choosealicense.com/licenses/mit/) Copyright (c) 2023 David Alejandro Ramírez Pérez ([@PatoKuack](https://github.com/PatoKuack))
