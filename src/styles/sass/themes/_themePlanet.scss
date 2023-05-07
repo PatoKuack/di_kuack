@@ -1,0 +1,80 @@
+:root {
+  --planet-bg-color-fire:   rgb(139, 19, 65);
+  --planet-bg-color-watter: rgb(105, 255, 255);
+  --planet-bg-color-earth:  rgb(0, 144, 65);
+  // --planet-bg-color-gaseous:rgb(126, 29, 174);
+  --liana-color-fire:       peru;
+  --trunk-color-fire:       sandybrown;
+  --flower-color-A-fire:    Moccasin;
+  --flower-color-B-fire:    orange;
+  --sky-color-fire:         rgb(82, 24, 4);
+}
+
+.planet {
+  &.fire {
+    background-color: var(--planet-bg-color-fire);
+  }
+  &.watter {
+    background-color: var(--planet-bg-color-watter);
+  }
+  &.earth {
+    background-color: var(--planet-bg-color-earth);
+  }
+}
+
+/* .flora__fire {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: cyan;
+} */
+.fauna__fire:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  // background-color: red;
+  background-image:
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px),
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px),
+    radial-gradient(50px 100px at 0% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px),
+    
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px),
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px),
+    radial-gradient(50px 100px at 100% 82.5px, transparent 30px, var(--liana-color-fire) 30px, var(--liana-color-fire) 32px, transparent 32px)
+  ;
+  background-size: 60px 185px, 60px 185px, 60px 185px, 60px 185px, 60px 185px, 60px 185px;
+  background-position: 80px -7px, 80px 18px, 80px 43px, 25px 32px, 25px 55px, 25px 80px;
+}
+.fauna__fire:nth-child(2) {
+  position: absolute;
+  left: -5%;
+  top: -1%;
+  width: 110%;
+  height: 73%;
+  background-image: 
+    radial-gradient(80px 160px at 45px 82.5px, transparent 40px, var(--trunk-color-fire) 40px, var(--trunk-color-fire) 45px, var(--sky-color-fire) 45px)
+  ;
+  background-size: 180px 165px;
+  background-position: -5% 0%;
+}
+.fauna__fire:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
+  height: 30%;
+  background-image: 
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px),
+    radial-gradient(ellipse, var(--flower-color-A-fire) 5px, var(--flower-color-B-fire) 20px, transparent 20px)
+  ;
+  background-size: 82px 32px, 140px 70px, 134px 67px, 100px 50px, 90px 45px, 70px 35px, 50px 25px;
+}

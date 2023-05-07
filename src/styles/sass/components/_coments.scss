@@ -1,7 +1,5 @@
 :root {
   --border-coments: .25rem;
-  --botton-margin: .25rem;
-  --form-bottom-size: 2rem;
   --close-bottom-size: 1.5rem;
 }
 
@@ -11,11 +9,12 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  padding: 1.5rem 10vw 1.5rem;
+  padding: 3rem 2.5rem 2rem;
   background-image: 
-      radial-gradient(var(--consol-color-A) 0%, var(--consol-color-A) 100%);
+    radial-gradient(var(--consol-color-A) 0%, var(--consol-color-A) 100%);
   background-repeat: no-repeat;
-  border-width: var(--border-coments);
+  border-width: 0;
+  border-top-width: var(--border-coments);
   border-top-width: calc(var(--border-coments) * 2);
   border-style: solid;
   border-color: var(--consol-color-B);
@@ -23,40 +22,31 @@
   @include from(m){
     border-top-width: calc(var(--border-coments) * 3);
   }
-  @include from(l){
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-  }
 
-  & > * {
+  & > *:not(button) {
     width: 100%;
     max-width: 850px;
   }
 }
 .coments-form {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
 }
 .coments-form__textarea {
   width: 100%;
   max-height: 7rem;
-  padding: .15rem .4rem;
-  padding-right: calc(var(--form-bottom-size) + 1rem);
+  padding: .2rem .4rem;
   background-color: transparent;
   color: var(--text-color);
-  border: 2px solid var(--text-color);
-  border-radius: 5px;
-  font-size: var(--body-font-size);
-  @include from(m) {
-    padding-right: calc(var(--form-bottom-size) + 1.2rem);
-  }
+  font-size: (var(--body-font-size));
+  border: none;
 }
 .coments-form__button {
-  position: absolute;
-  right: var(--botton-margin);
-  // bottom: calc(var(--botton-margin) + .15rem);
-  top: calc(100% + var(--botton-margin));
-  min-height: var(--form-bottom-size);
-  padding: 0 .3rem;
+  padding: .3rem;
+  margin: .1rem;
+  margin-top: auto;
   font-size: var(--small-font-size);
   font-weight: bold;
   box-shadow: none;
@@ -86,6 +76,7 @@
 .coments-item__text {
   padding: .5rem;
   padding-bottom: .25rem;
+  white-space: pre;
 }
 .coments-item__close {
   position: absolute;
@@ -94,15 +85,6 @@
   width: var(--close-bottom-size);
   height: var(--close-bottom-size);
   margin: auto;
-}
-.coments-item__close__icon {
-  width: 1rem;
-  height: 1rem;
-  margin: auto;
-  @include from(m) {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .coments-item__reaction {

@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,react,node,windows,sass
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,react,node,windows,sass
 
+### Personal ###
+*.ai
+./src/assets/icons/*.ai
+
 ### Node ###
 # Logs
 logs

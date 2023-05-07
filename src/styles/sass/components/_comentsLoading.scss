@@ -1,0 +1,49 @@
+.loading-coments__item {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-color);
+  @include from(m) {
+    margin-top: calc(1rem - .8px);
+  }
+}
+.loading-coments__text {
+  // --small-font-size = .75rem
+  height: calc(19.2px + .75rem);
+  padding: .5rem;
+  padding-bottom: .25rem;
+  @include from(m) {
+    // --body-font-size = .9rem
+    height: calc(19.2px + .9rem);
+  }
+}
+
+.loading-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__light {
+    position: absolute;
+    width: 120%;
+    height: 50px;
+    transform: translate3d(-100%, 0px, 0px) rotate3d(0, 0, 1, -15deg);
+    // background-color: rgba(240, 248, 255, 0.318);
+    background-image: linear-gradient(transparent 0%, rgba(240, 248, 255, 0.5) 50%, transparent 100%);
+    animation-name: loading-coment;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes loading-coment {
+    from {
+      transform: translate3d(-100%, 0px, 0px) rotate3d(0, 0, 1, -15deg);
+    }
+    30%, to {
+      transform: translate3d(100%, 0px, 0px) rotate3d(0, 0, 1, -15deg);
+    }
+  }
+}

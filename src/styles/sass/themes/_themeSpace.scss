@@ -1,0 +1,108 @@
+:root {
+  --decoration-size: calc(70vw + 70vh);
+}
+
+.cosmos {
+  background-color: var(--background-color);
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.space {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 15%, var(--text-color) .5px, transparent 2px),
+    radial-gradient(circle at 12% 21%, var(--text-color) .7px, transparent 2.5px),
+    radial-gradient(circle at 40% 35%, var(--text-color) .6px, transparent 1.7px);
+  background-size: 55% 50%, 77% 70%, 60% 80%;
+  transform-origin: center center;
+  transform: rotateZ(10deg);
+}
+.stars {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 120%;
+  height: 120%;
+}
+.stars:nth-child(1) {
+  background-image: 
+      radial-gradient(circle at 10% 40%, var(--text-color) .3px, transparent 3px),
+      radial-gradient(circle at 3% 3%, var(--text-color) .3px, transparent 2.5px),
+      radial-gradient(circle at 85% 80%, var(--text-color) .3px, transparent 3.5px)
+  ;
+  background-size:  35% 57%, 45% 35%, 50% 40%;
+  transform-origin: center center;
+  transform: rotateZ(-30deg);
+  animation-name: separateA;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.stars:nth-child(2), .stars:nth-child(3) {
+  background-image: 
+      radial-gradient(circle at 26% 48%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 1% 1%, var(--text-color) .2px, transparent 2px),
+      radial-gradient(circle at 19% 67%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 58% 93%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 72% 37%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 37% 83%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 11% 90%, var(--text-color) 0px, transparent 2px),
+      radial-gradient(circle at 68% 15%, var(--text-color) .1px, transparent 2px),
+      radial-gradient(circle at 68% 10%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 11% 90%, var(--text-color) .7px, transparent 2px),
+      radial-gradient(circle at 37% 83%, var(--text-color) .4px, transparent 2px),
+      radial-gradient(circle at 72% 37%, var(--text-color) 1px, transparent 2px),
+      radial-gradient(circle at 58% 93%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 19% 67%, var(--text-color) .3px, transparent 2px),
+      radial-gradient(circle at 1% 1%, var(--text-color) .5px, transparent 2px),
+      radial-gradient(circle at 26% 48%, var(--text-color) .8px, transparent 2px);
+  background-size:  35% 60%, 75% 45%, 70% 40%, 73% 46%, 63% 50%, 56% 36%, 56% 27%, 62% 34%, 30% 50%, 75% 55%, 70% 40%, 73% 46%, 63% 50%, 56% 46%, 56% 47%, 62% 34%;
+  transform-origin: center center;
+  transform: rotateZ(55deg);
+  animation-name: separateB;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  opacity: 0%;
+}
+.stars:nth-child(3) {
+  animation-delay: 40s;
+  transform: rotateZ(-55deg);
+}
+
+
+
+@keyframes separateA {
+  from {
+    transform: rotate3d(0, 0, 1, 30deg) scale(70%);
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  65% {
+    opacity: 100%;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 30deg) scale(200%);
+    opacity: 0%;
+  }
+}
+@keyframes separateB {
+  from {
+    transform: rotate3d(0, 0, 1, 30deg) scale(70%);
+    opacity: 0%;
+  }
+  10% {
+    opacity: 100%;
+  }
+  65% {
+    opacity: 100%;
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 30deg) scale(300%);
+    opacity: 0%;
+  }
+}

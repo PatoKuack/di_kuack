@@ -6,8 +6,11 @@
   width: 100%;
   // height: $header-height;
   margin: 1rem 0;
-  color: var(--background-color);
+  -webkit-text-stroke: 1px var(--text-color);
+  text-stroke: 1px var(--text-color);
+  color: transparent;
   // text-align: center;
+  // color: var(--background-color);
   // text-shadow: 1px 1px 0px var(--text-color), -1px -1px 0px var(--text-color), 1px -1px 0px var(--text-color), -1px 1px 0px var(--text-color);
-  text-shadow: 1px 0px 0px var(--text-color), -1px 0px 0px var(--text-color), 0px -1px 0px var(--text-color), 0px 1px 0px var(--text-color);
+  // text-shadow: 1px 0px 0px var(--text-color), -1px 0px 0px var(--text-color), 0px -1px 0px var(--text-color), 0px 1px 0px var(--text-color);
 }

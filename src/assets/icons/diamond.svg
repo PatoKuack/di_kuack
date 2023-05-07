@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" x="0px" y="0px"
+	 viewBox="0 0 95.1 70.4" style="enable-background:new 0 0 95.1 70.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#8DD0DE;stroke:#7FCBDD;stroke-miterlimit:10;}
+	.st1{fill:#BBE1E4;stroke:#7FCBDD;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#7FCBDD;stroke-miterlimit:10;}
+</style>
+<polygon fill="#8DD0DE" stroke="#7FCBDD" stroke-miterlimit="10" points="1.3,25.8 11.6,13.9 24.7,5.4 39.8,1 55.5,1 70.5,5.4 83.7,13.9 93.9,25.8 47.6,69.1 "/>
+<path fill="#BBE1E4" stroke="#7FCBDD" stroke-miterlimit="10" d="M1.3,25.7l10.1-11.7c0.1-0.1,0.2-0.1,0.3-0.1l34.1,10.5L25.2,5.9c-0.2-0.2-0.1-0.5,0.1-0.6l14.2-4.2
+	c0.1,0,0.2,0,0.3,0.1l7.8,22.7l7.8-22.7c0-0.1,0.2-0.2,0.3-0.2l14.5,4.3c0.1,0,0.2,0.2,0.1,0.3L49.4,24.5L83.5,14
+	c0.1,0,0.2,0,0.3,0.1l10,11.5c0.1,0.1,0,0.2-0.1,0.2H49.1l32.9,11.1L70.5,47.6L48.8,27.4l10,31.2L47.6,68.7l-10.1-9.1l9.1-32.5
+	L24.9,47.8l-10-9.3l31-12.7L1.3,25.7C1.3,25.8,1.3,25.7,1.3,25.7z"/>
+<polygon fill="#8DD0DE" stroke="#7FCBDD" stroke-miterlimit="10" points="27.2,25.6 31.8,20.4 37.6,16.7 44.2,14.8 51.1,14.8 57.7,16.7 63.5,20.4 68,25.6 47.6,44.7 "/>
+<line fill="transparent" stroke="#7FCBDD" stroke-miterlimit="10" x1="47.6" y1="23.9" x2="47.6" y2="69.1"/>
+<path fill="transparent" stroke="#7FCBDD" stroke-miterlimit="10" d="M1.3,25.7l10.1-11.7c0.1-0.1,0.2-0.1,0.3-0.1l34.1,10.5L25.2,5.9c-0.2-0.2-0.1-0.5,0.1-0.6l14.2-4.2
+	c0.1,0,0.2,0,0.3,0.1l7.8,22.7l7.8-22.7c0-0.1,0.2-0.2,0.3-0.2l14.5,4.3c0.1,0,0.2,0.2,0.1,0.3L49.4,24.5L83.5,14
+	c0.1,0,0.2,0,0.3,0.1l10,11.5c0.1,0.1,0,0.2-0.1,0.2H49.1l32.9,11.1L70.5,47.6L48.7,27.4l10,31.2L47.6,68.7l-10.1-9.1l9.1-32.5
+	L24.9,47.8l-10-9.3l31-12.7L1.3,25.7C1.3,25.8,1.3,25.7,1.3,25.7z"/>
+</svg>
