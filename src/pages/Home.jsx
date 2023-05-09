@@ -26,8 +26,6 @@ function Home( {theme}) {
     colorIcon,
   } = useBlog();
 
-  
-
   return (
     <React.Fragment>
       {wait && <BlogLoading loadType="loading-leaving" planetType={theme} />}
