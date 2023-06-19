@@ -89,10 +89,16 @@ const phrasesList = [
   }},
 ];
 const dreamsList = [
-  {id:1, list:'sueños', planet: 'gaseous', title:'', slug:'sueños-', content:{
-    p1:{'span-1':''},
+  {id:1, list:'sueños', planet: 'gaseous', title:'Guerra en el metro', slug:'suenos-guerra-en-el-metro', content:{
+    p1:{'span-1':'En los albores de un día común, me encontraba en marcha para cumplir una cita con un viejo amigo, cuando de la nada entre tanta gente vislumbré tu figura en el andén del metro. Mi curiosidad se vio avivada por tu presencia y, sin titubear, decidí seguir tus pasos, pues el tiempo me concedía esa indulgencia. Sin embargo, tu paso acelerado me impidió alcanzarte, y en ese bullicio tumultuoso, te perdí de vista, oh fugitiva.'},
+    p2:{'span-1':'Después de buscar tu rastro por unos minutos, desistí de la búsqueda al verme perdido, temiendo incurrir en un retraso a mi cita decidí encontrar mi camino original. Mas, sorprendentemente, te vi regresando en tu andar precipitado, retrocediendo por el mismo camino que habías recorrido. En un instante, justo antes de desaparecer de mi campo visual, nuestros ojos se encontraron brevemente. ¿Acaso reconociste en mí a un conocido? Mas sin detenerte ni un instante, proseguiste en tu marcha implacable.'},
+    p3:{'span-1':'Después, me reuní con mi viejo amigo en un modesto rincón del metro, en donde disfrutamos de un ágape mientras sosteníamos una conversación amena. Ignorábamos que las adversidades se cernirían sobre nosotros. Al emprender el regreso a mi hogar, una súbita guerra se desató sin previo aviso, como si los mismos dioses se regodearan en un caprichoso juego. En lugar de buscar refugio en la seguridad, me vi atraído por el fragor de la batalla, entregándome a la lucha con una audacia impetuosa.'},
+    p4:{'span-1':'Enfrenté a los enemigos con arrojo, pero su número se multiplicaba sin cesar, como si brotaran del mismísimo averno, en cambio mis aliados reducían su número con cada instante dejándome en una fuerte desventaja de uno contra cientos. Fue entonces que, en un intento desesperado por salvarme, me deslicé por oscuros atajos entre los edificios, buscando una senda que me condujera a la salvación. Fue allí, en la penumbra opresiva del alcantarillado, en lo más profundo que puede llegar la ciudad, que una figura se aproximó cautelosamente hacia mí.'},
+    p5:{'span-1':'Mi corazón se agitó con el temor de que fuera otro enemigo, mis músculos se preparaban para atacar pero, para mi asombro, era una dulce niña de tez pálida y cabellos castaños, quien sostenía un oso de peluche en sus menudas manos. Sus labios, en un susurro apenas audible, pronunciaron la palabra "papá". Mi ser se estremeció ante tal revelación, pues comprendí que ella era la hija perdida, anhelada en mis sueños más profundos. En un abrazo que trascendió el tiempo y el espacio, nuestras almas se reencontraron en aquel sombrío escenario.'},
+    p6:{'span-1':'Mas, de repente, desperté de ese ensueño vívido. Fue solo una ilusión, un capricho efímero del destino. Sin embargo, el fulgor de aquel encuentro imaginario se mantuvo en mi corazón, alimentando la esperanza de que algún día, en algún lugar, mi hija perdida y yo nos encontraremos en una realidad tangible.'},
   }},
 ];
+
 const allList = [];
 const noList = [];
 
@@ -130,9 +136,9 @@ allList.sort(compareList);
 // Lista de secciones
 const sectionsList = [
   {idSection:1, name:'Investigación', selected:true, list:researchList},
-  {idSection:2, name:'Aventuras', selected:true, list:adventuresList},
+  {idSection:2, name:'Aventuras', selected:false, list:noList},
   {idSection:3, name:'Frases', selected:true, list:phrasesList},
-  {idSection:4, name:'Sueños', selected:false, list:noList},
+  {idSection:4, name:'Sueños', selected:true, list:dreamsList},
   {idSection:5, name:'Ideas', selected:false, list:noList},
 ];
 

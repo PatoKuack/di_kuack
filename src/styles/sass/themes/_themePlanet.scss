@@ -2,7 +2,7 @@
   --planet-bg-color-fire:   rgb(139, 19, 65);
   --planet-bg-color-watter: rgb(105, 255, 255);
   --planet-bg-color-earth:  rgb(0, 144, 65);
-  // --planet-bg-color-gaseous:rgb(126, 29, 174);
+  --planet-bg-color-gaseous:rgb(126, 29, 174);
   --liana-color-fire:       peru;
   --trunk-color-fire:       sandybrown;
   --flower-color-A-fire:    Moccasin;
@@ -19,6 +19,9 @@
   }
   &.earth {
     background-color: var(--planet-bg-color-earth);
+  }
+  &.gaseous {
+    background-color: var(--planet-bg-color-gaseous);
   }
 }
 

@@ -202,6 +202,11 @@
       radial-gradient(circle at 0% 100%, rgb(177, 255, 255) 0%, rgba(79, 255, 255, 0.755) 50%, rgba(79, 255, 255, 0.5) 50%, transparent 52%)
     ;
   }
+  &.gaseous{
+    background-image: 
+      radial-gradient(circle at 0% 100%, rgb(207, 177, 255) 0%, rgba(182, 79, 255) 45%, rgba(182, 79, 255) 45%, rgba(182, 79, 255, 0.755) 50%, rgba(182, 79, 255, 0.755) 50%, transparent 52%)
+    ;
+  }
   &.earth{
     background-image: 
       radial-gradient(ellipse at 40% 125%, rgb(33, 222, 215) 0%, rgb(10, 200, 248) 35%, transparent 35%),

@@ -41,7 +41,11 @@ function TopicContent({theme, changeTheme}) {
     comentsError,
   } = useTopics();
 
-  const currentTopicData = sections[sections.findIndex(section => section.name.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n').replaceAll(' ', '_') === `${slug}`.split("-")[0])].list.find(data => data.slug === slug);
+  const currentTopicData = sections[
+    sections.findIndex(section => section.name.toLowerCase().replaceAll('á', 'a').replaceAll('é', 'e').replaceAll('í', 'i').replaceAll('ó', 'o').replaceAll('ú', 'u').replaceAll('ü', 'u').replaceAll('ñ', 'n').replaceAll(' ', '_') === `${slug}`.split("-")[0])
+  ].list.find(
+    data => data.slug === slug
+  );
 
   const onSubmitComent = (event) => {
     event.preventDefault();
